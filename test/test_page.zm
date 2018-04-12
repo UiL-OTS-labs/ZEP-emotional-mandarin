@@ -1,0 +1,397 @@
+/******************************************************************************\
+TODO
+\******************************************************************************/
+
+import std_sound_output_device;
+import std_texts_en;
+
+
+Page test_page
+{
+    TestItem    item;           // trial control parameters
+
+
+    init()
+    {
+        fill_pattern_color = TEST_PAGE_COLOR;
+    }
+
+
+    //on_event:key_press()
+    //{
+    //    // Handle left-shift (no) and right-shift (yes).
+    //    if (input_key == KEY_Shift_L)
+    //        response.process_hit(0, event_time);
+    //    else if (input_key == KEY_Shift_R)
+    //        response.process_hit(1, event_time);
+    //    else
+    //        handle_special_key(this, input_key, input_modifiers);
+    //}
+
+    // this might enable A NUMPAD RESPONSE
+    on_event:key_press()
+    {
+
+        if (input_key == KEY_KP_7 || input_key == KEY_KP_Home)
+            response.process_hit(1, event_time);
+        else if (input_key == KEY_KP_9 || input_key == KEY_KP_Page_Up)
+            response.process_hit(2, event_time);
+        else if (input_key == KEY_KP_1 || input_key == KEY_KP_End)
+            response.process_hit(3, event_time);
+        else if (input_key == KEY_KP_3 || input_key == KEY_KP_Page_Down)
+            response.process_hit(4, event_time);
+        else
+            handle_special_key(this, input_key, input_modifiers);
+    }
+
+    // 
+    //on_event:button_press()
+    //{
+    //    layout.canvas.check_mouse_click(input_pointer_x, input_pointer_y,
+    //        event_time);
+    //}
+
+
+    on_event:message()
+    {
+        // Process button-box message. See setup() below.
+        response.process_hit(message_arg, event_time);
+    }
+
+
+    VerticalLayout layout
+    {
+        init()
+        {
+            spacing = 50;
+            height = 0;     // 0 means as large as possible
+        }
+
+
+        CanvasGadget canvas
+        {
+            init()
+            {
+                fill_pattern_color = TEST_PAGE_STIMULUS_COLOR;
+                size = 450, 100;
+                offset_x = width / 2;
+                offset_y = height / 2;
+            }
+
+
+            CrossShape fixation
+            {
+                init()
+                {
+                    radius = 15;
+                    line_width = 5;
+                    line_pattern_color = color:crimson;
+                }
+            }
+        }
+
+
+        VerticalLayout buttons
+        {
+
+            init()
+            {
+                spacing = 50;
+                options = LAYOUT_EQUAL_HEIGHT;
+            }
+
+            HorizontalLayout topbuttons
+            {
+                init()
+                {
+                    spacing = 50;
+                    options = LAYOUT_EQUAL_WIDTH;
+                }
+
+
+                ButtonGadget button1
+                {
+                    init()
+                    {
+                        text = TOPL_BUTTON_TEXT;
+                        font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
+                        font_size = TEST_PAGE_BUTTON_FONT_SIZE;
+                        fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
+                        text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
+                        size = 200, 100;
+                    }
+
+
+                    on_event:activate()
+                    {
+                        response.process_hit(0, event_time);
+                    }
+                }
+
+
+                ButtonGadget button2
+                {
+                    init()
+                    {
+                        text = TOPR_BUTTON_TEXT;
+                        font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
+                        font_size = TEST_PAGE_BUTTON_FONT_SIZE;
+                        fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
+                        text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
+                        size = 200, 100;
+                    }
+
+
+                    on_event:activate()
+                    {
+                        response.process_hit(1, event_time);
+                    }
+                }
+        
+            }
+
+            HorizontalLayout botbuttons
+            {
+
+                init()
+                {
+                    spacing = 50;
+                    options = LAYOUT_EQUAL_WIDTH;
+                }
+
+                ButtonGadget button3
+                {
+                    init()
+                    {
+                        text = BOTL_BUTTON_TEXT;
+                        font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
+                        font_size = TEST_PAGE_BUTTON_FONT_SIZE;
+                        fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
+                        text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
+                        size = 200, 100;
+                    }
+
+
+                    on_event:activate()
+                    {
+                        response.process_hit(1, event_time);
+                    }
+                }
+
+                ButtonGadget button4
+                {
+                    init()
+                    {
+                        text = BOTR_BUTTON_TEXT;
+                        font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
+                        font_size = TEST_PAGE_BUTTON_FONT_SIZE;
+                        fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
+                        text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
+                        size = 200, 100;
+                    }
+
+
+                    on_event:activate()
+                    {
+                        response.process_hit(1, event_time);
+                    }
+                }    
+            }
+        }
+
+
+        time start_fixation(time t)
+        {
+            // Start fixation cross.
+            canvas.fixation.start(t, FIXATION_DURATION);
+
+            // Return fixation offset time.
+            return canvas.fixation.expected_finish_time;
+        }
+
+
+        void reset()
+        {
+            full_abort();
+        }
+    }
+
+
+    SoundChain stimulus
+    {
+        // Sound source/producer object.
+        SoundFile clip {}
+
+
+        // Sound sink/consumer object.
+        SoundPlayback playback {}
+
+
+        time play(time t)
+        {
+            abort();
+
+            playback.device = sound_output_device;
+            clip.file = stimuli_dir() + "sounds/" + item.wordfn;
+
+            start(t);
+
+            return expected_start_time;
+        }
+    }
+
+
+    Response response
+    {
+        // Response data.
+        int     value;          // response value: 0=no, 1=yes, -1=timeout
+        int     rt;             // response time [ms]
+        int     correct;        // correct response: 0=no, 1=yes, -1=n.a.
+
+
+        void clear()
+        {
+            value = -1;
+            rt = -9999;
+            correct = -1;
+        }
+
+
+        void process_hit(int val, time t)
+        {
+            HitType validity = hit(t);
+
+            // Accept the first hit in the response interval and end the 
+            // response interval.
+            if (validity == HIT_VALID)
+            {
+                value = val;
+                rt = int(reaction_time(0));
+                correct = 
+                    (item.type != NEUTRAL && val == 1) ||
+                    (item.type == NEUTRAL && val == 0);
+
+                ignore_remaining_hits();
+
+                stop();
+            }
+            else if (validity == HIT_TOO_EARLY || validity == HIT_TOO_LATE)
+            {
+                // False alarm. Deal with this if desired.
+            }
+        }
+
+
+        on_event:finish()
+        {
+            real correctness = 0;
+            if (num_valid_hits > 0) correctness = correct ? 1 : -1;
+
+            if (!test_page_overlay.start_feedback(this, correctness, 
+                    FEEDBACK_DURATION)) 
+                done(CONTINUE);
+        }
+
+
+        on_event:message()
+        {
+            done(CONTINUE);
+        }
+    }
+
+
+    // Aborts any ongoing activity on this page and signals the initiator
+    // of the trial that we're done.
+    void done(int msgid)
+    {
+        // Just in case; abort presentation if still active.
+        layout.reset();
+        stimulus.abort();
+
+        signal_target(msgid);   // tell caller we're done
+        target = null;
+
+        control.clear_status();
+    }
+
+
+    //==========================================================================
+
+
+    // Performs preparatory work required before using this page.
+    void setup(int ntrials=-1, bool fb=false, bool pr=false)
+    {
+        test_page_overlay.setup(this);
+
+        // Show or hide prompt.
+        test_page_overlay.show_prompt(pr ? 
+            "which is the second word?" : "");
+
+        // Enable or disable the progress bar.
+        test_page_overlay.show_progress_bar(ntrials);   // disabled if < 0
+
+        // Enable or disable feedback.
+        test_page_overlay.enable_feedback(fb);          // disabled if false
+
+
+        // Enable button-box buttons 0 and 1 for resp. no(0) and yes(1).
+        control.target = this;
+        control.button_box.disable_buttons();
+        control.button_box.enable_button(0, 0); // button 0 means no(0)
+        control.button_box.enable_button(1, 1); // button 1 means yes(1)
+    }
+
+
+    // Performs cleaning up if necessary.
+    void cleanup()
+    {
+        test_page_overlay.cleanup();
+
+        control.button_box.disable_buttons();
+        control.target = null;
+    }
+
+
+    // Starts a trial.
+    void action(Object caller, TestItem it, time tref, int count=-1)
+    {
+        // Save the passed trial control parameters.
+        item = it;
+
+
+        // Show this page (if not yet done) and make tref the trial start time.
+        tref = test_window1.show_test_page(this, tref + INTERTRIAL_INTERVAL);
+
+
+        // Reset response data.
+        response.clear();
+
+
+        // Start fixation symbol.
+        time fixoffset = layout.start_fixation(tref);
+
+
+        // Start stimulus at fixation offset.
+        time stimonset = stimulus.play(fixoffset);
+
+
+        // Response interval starts at stimulus onset. Timeout after 
+        // RESPONSE_DURATION unless this duration is 0s or less.
+        response.start(stimonset, RESPONSE_DURATION);
+
+
+        // Update progress counter (if enabled).
+        test_page_overlay.update_progress_bar(count);
+
+
+        // Update status line on control window. Cleared in done() above.
+        control.set_status(
+            string(item.id) + "  " + 
+            string(item.type) + "  " + 
+            string(item.wordfn));
+
+
+        // Remember who to signal when the trial is over.
+        target = caller;
+    }
+}

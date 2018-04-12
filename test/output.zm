@@ -1,0 +1,57 @@
+/******************************************************************************\
+FILE:           output.zm
+AUTHOR:         Theo Veenker <theo.veenker@beexy.nl>
+ADAPTED BY:     -
+
+DESCRIPTION:
+
+Defines the formats of output table(s).
+
+
+HISTORY:
+2011-10-25 TV   Created.
+
+\******************************************************************************/
+
+
+// Test output table record.
+record TestOutput
+{
+    int         trialnum;       // trial number
+
+    int         id;             // item id
+    string      emotion;        // item emotion
+    string      sentence_fname;         // stimulus word sound filename
+    string      sentence_string;
+    
+
+    int         value;          // response value: 0=no, 1=yes, -1=timeout
+    int         rt;             // response time [ms]
+    int         correct;        // correct response: 0=no, 1=yes, -1=n.a.
+}
+
+
+// Test output table.
+TestOutput[..] test_output;
+
+
+//------------------------------------------------------------------------------
+
+
+// Appends one row of data to test output table.
+void test_output_append(TestOutput data)
+{
+    test_output.size = test_output.size + 1;
+    test_output[test_output.size-1] = data;
+}
+
+
+// Writes test output table contents to CSV file and clears the table.
+void test_output_save()
+{
+    // Append table to CSV file (create if non-existent). The filename format
+    // is: <dbname>/<dbnum>/<expname>/<phasename>/ses<sesid>-<tblnum>.csv
+    string fn = expdb.experiment.session.create_table(namespace_name, 1);
+    test_output.append(fn, namespace_name + ": test results");
+    test_output.size = 0;
+}

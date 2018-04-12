@@ -1,0 +1,17 @@
+id;emotion;sentence_fname;sentence_string;alt1;alt2;al3;alt4
+1;neutral;1_neutral.wav;1;1;2;3;4
+2;neutral;2_neutral.wav;2;2;1;3;4
+3;neutral;3_neutral.wav;3;3;1;2;4
+4;neutral;4_neutral.wav;4;4;1;2;3
+5;happy;1_happy.wav;1;1;2;3;4
+6;happy;2_happy.wav;2;2;1;3;4
+7;happy;3_happy.wav;3;3;1;2;4
+8;happy;4_happy.wav;4;4;1;2;3
+9;sad;1_sad.wav;1;1;2;3;4
+10;sad;2_sad.wav;2;2;1;3;4
+11;sad;3_sad.wav;3;3;1;2;4
+12;sad;4_sad.wav;4;4;1;2;3
+13;fearful;1_fearful.wav;1;1;2;3;4
+14;fearful;2_fearful.wav;2;2;1;3;4
+15;fearful;3_fearful.wav;3;3;1;2;4
+16;fearful;4_fearful.wav;4;4;1;2;3

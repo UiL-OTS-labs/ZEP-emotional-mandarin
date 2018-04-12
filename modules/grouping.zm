@@ -1,0 +1,30 @@
+/******************************************************************************\
+FILE:           grouping.zm
+AUTHOR:         Theo Veenker <theo.veenker@beexy.nl>
+ADAPTED BY:     -
+
+DESCRIPTION:
+
+Defines groups and handles participant group assignment.
+
+
+HISTORY:
+2011-06-07 TV   Created as part of the standard Zep modules.
+
+\******************************************************************************/
+
+
+// Symbolic definition of groups.
+enum TestGroup
+{
+    LIST1,
+    LIST2
+}
+
+
+// Assigns participant to a group.
+int assign_participant_to_group()
+{
+    // Assign to first (i.e default) group.
+    return select_group_default();
+}

@@ -1,0 +1,43 @@
+/******************************************************************************\
+FILE:           globaldefs.zm
+AUTHOR:         Theo Veenker <theo.veenker@beexy.nl>
+ADAPTED BY:     -
+
+DESCRIPTION:
+
+Defines global experiment settings such experiment version, database id and
+id of the default researcher.
+
+
+HISTORY:
+2013-07-03 TV   Created.
+
+\******************************************************************************/
+
+
+// Experiment version. In piloting stage and later increment this on each 
+// relevant change.
+const int       EXPERIMENT_VERSION              = 1;
+
+
+// Database id. Any alphanumeric identifier is OK (typically set to "01").
+const string    DATABASE_NUMBER                 = "01";
+
+
+// ID of default researcher.
+const string    DEFAULT_RESEARCHER_ID           = "JD"; // John Doe
+
+
+// Whether experiment record, researcher record and group record should 
+// be checked out for updating (true) or reading only (false) during the 
+// experiment session. The participant record and experiment session 
+// record are always checked out for updating.
+const bool      EXPERIMENT_RECORD_UPDATEABLE    = false;
+const bool      RESEARCHER_RECORD_UPDATEABLE    = false;
+const bool      GROUP_RECORD_UPDATEABLE         = false;
+
+
+// Controls whether the assigned group is shown in the control window.
+// Set this to false if the experimenter should not be aware of the 
+// selected group.
+const bool      SHOW_ASSIGNED_GROUP             = true;

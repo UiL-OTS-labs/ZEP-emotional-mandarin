@@ -1,0 +1,88 @@
+/******************************************************************************\
+FILE:           audlexdec.zp
+AUTHOR:         Theo Veenker <theo.veenker@beexy.nl>
+ADAPTED BY:     -
+
+DESCRIPTION:
+
+Implementation of task: Auditory Lexical Decision
+
+For more information on the audlexdec task see readme.txt in the 
+test folder.
+
+
+Global structure of experiment:
+
+  - welcome
+
+  - phase 1 (see subfolder test)
+
+  - thankyou
+
+
+HISTORY:
+2013-07-03 TV   Created.
+
+\******************************************************************************/
+
+requires 1.14;
+
+import std_windows1;
+import std_texts_en;
+import std_entry_page1;
+import std_exit_page1;
+import std_pause_page;
+import std_blank_page;
+
+import test::task;
+
+
+Experiment experiment
+{
+    on_event:entry()
+    {
+        show_test_windows();
+    }
+
+
+    on_event:message()
+    {
+        // On Ctrl+F4 jump unconditionally to the thank-you part.
+        if (message_sender == control && message_arg == SYS_STOP)
+        {
+            control.mark_experiment_aborted();
+            thankyou.enter();
+        }
+    }
+
+
+    Part welcome
+    {
+        on_event:entry()
+        {
+            entry_page.set_text(WELCOME_TEXT);
+            entry_page.action(this, 0s);
+        }
+    }
+
+
+    Part phase1
+    {
+        on_event:entry()
+        {
+            test::action(this);
+        }
+    }
+
+
+    Part thankyou
+    {
+        on_event:entry()
+        {
+            control.end_experiment();   // Check-in session.
+
+            exit_page.set_text(THANK_YOU_TEXT);
+            exit_page.action(this, 10s);
+        }
+    }
+}
