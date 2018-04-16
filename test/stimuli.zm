@@ -1,19 +1,25 @@
-// Symbolic definition of item type.
-// enum ItemType
-// {
-//     NEUTRAL,
-//     HAPPY,                
-//     SAD,
-//     FEARFUL
-// }
+// somehow, plugins were not found
+plugin zep_file;
+
+//Symbolic definition of item type.
+enum ItemType
+{
+    NEUTRAL,
+    HAPPY,                
+    SAD,
+    FEARFUL
+}
 
 //import stimuli;
+
+
+
 
 // Item table record.
 record TestItem {
 
     int id;
-    string emotion;
+    ItemType emotion;
     string sentence_fname;
     string sentence_string;
     
@@ -26,6 +32,7 @@ record TestItem {
 // arrays for practice and test
 TestItem[..] practice_items;
 TestItem[..] test_items;
+
 
 
 int load_stimuli()

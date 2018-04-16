@@ -232,7 +232,7 @@ Page test_page
             abort();
 
             playback.device = sound_output_device;
-            clip.file = stimuli_dir() + "sounds/" + item.wordfn;
+            clip.file = stimuli_dir() + "sounds/" + item.sentence_fname;
 
             start(t);
 
@@ -268,8 +268,8 @@ Page test_page
                 value = val;
                 rt = int(reaction_time(0));
                 correct = 
-                    (item.type != NEUTRAL && val == 1) ||
-                    (item.type == NEUTRAL && val == 0);
+                    (item.emotion != NEUTRAL && val == 1) ||
+                    (item.emotion == NEUTRAL && val == 0);
 
                 ignore_remaining_hits();
 
@@ -387,8 +387,8 @@ Page test_page
         // Update status line on control window. Cleared in done() above.
         control.set_status(
             string(item.id) + "  " + 
-            string(item.type) + "  " + 
-            string(item.wordfn));
+            string(item.emotion) + "  " + 
+            string(item.sentence_fname));
 
 
         // Remember who to signal when the trial is over.

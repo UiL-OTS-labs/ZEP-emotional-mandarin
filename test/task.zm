@@ -37,8 +37,16 @@ import test_page;
 
 Block task
 {
+    string output_table_name;
+    TestItem[] test_items;
+    // PracticeItem[] practice_items;
+
     on_event:entry()
     {
+        //println(test_items);
+        println(test_items.size);
+        task.num_cycles = test_items.size;
+        //experiment.setup_response_box();
         control.button_box.open();
 
         // If necessary set parallel port line D0 to power button box device.
@@ -56,7 +64,7 @@ Block task
                 "\n"
                 "Thank you for participating in this experiment.\n"
                 "\n"
-                "I wish you all th best.\n"
+                "I wish you all the best.\n"
 
 //                "To respond, hit the left shift key for <i>No</i> and the "
 //                "right shift key for <i>Yes</i>.\n"
@@ -203,6 +211,16 @@ Block task
             blank_page.action_auto(this, 500ms);
         }
     }
+}
+
+
+void setup(int output_table_number, 
+           string output_table_name, 
+           TestItem[] test_items)
+{
+    task.output_table_number   = output_table_number;
+    task.output_table_name     = output_table_name;
+    task.test_items            = test_items;
 }
 
 

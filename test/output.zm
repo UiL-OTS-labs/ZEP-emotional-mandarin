@@ -20,7 +20,7 @@ record TestOutput
     int         trialnum;       // trial number
 
     int         id;             // item id
-    string      emotion;        // item emotion
+    ItemType    emotion;        // item emotion
     string      sentence_fname;         // stimulus word sound filename
     string      sentence_string;
     
