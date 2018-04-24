@@ -23,8 +23,14 @@ record TestOutput
     ItemType    emotion;        // item emotion
     string      sentence_fname;         // stimulus word sound filename
     string      sentence_string;
+    string      alt1;
+    string      alt2;
+    string      alt3;
+    string      alt4;
+    string      alt_chosen;
+    string      alt_correct;
+    bool        answer_correct;
     
-
     int         value;          // response value: 0=no, 1=yes, -1=timeout
     int         rt;             // response time [ms]
     int         correct;        // correct response: 0=no, 1=yes, -1=n.a.

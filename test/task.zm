@@ -31,20 +31,17 @@ HISTORY:
 import defs;
 import stimuli;
 import shuffle;
+
 import output;
 import test_page;
 
 
 Block task
 {
-    string output_table_name;
-    TestItem[] test_items;
-    // PracticeItem[] practice_items;
-
     on_event:entry()
     {
         //println(test_items);
-        println(test_items.size);
+        //println(test_items.size);
         task.num_cycles = test_items.size;
         //experiment.setup_response_box();
         control.button_box.open();
@@ -86,45 +83,45 @@ Block task
     }
 
 
-    // Block practice
-    // {
-    //     TestItem        item;   // current item
+//     Block practice
+//     {
+//         TestItem        item;   // current item
 
 
-    //     on_event:entry()
-    //     {
-    //         num_cycles = prac_items.size;
+//         on_event:entry()
+//         {
+//             num_cycles = practice_items.size;
 
-    //         // Prepare test page: progress bar, feedback and prompt enabled.
-    //         test_page.setup(num_cycles, true, true);
-    //     }
-
-
-    //     on_event:exit()
-    //     {
-    //         test_page.cleanup();
-    //     }
+//             // Prepare test page: progress bar, feedback and prompt enabled.
+//             test_page.setup(num_cycles, true, true);
+//         }
 
 
-    //     Trial trial
-    //     {
-    //         on_event:entry()
-    //         {
-    //             item = prac_items[practice.cycle];
-
-    //             test_page.action(this, item, reference_time, practice.cycle);
-    //         }
-    //     }
-    // }
+//         on_event:exit()
+//         {
+//             test_page.cleanup();
+//         }
 
 
-    // Part
-    // {
-    //     on_event:entry()
-    //     {
-    //         blank_page.action_auto(this, 500ms);
-    //     }
-    // }
+//         Trial trial
+//         {
+//             on_event:entry()
+//             {
+//                 item = practice_items[practice.cycle];
+
+//                 test_page.action(this, item, reference_time, practice.cycle);
+//             }
+//         }
+//     }
+
+
+//     Part
+//     {
+//         on_event:entry()
+//         {
+//             blank_page.action_auto(this, 500ms);
+//         }
+//     }
 
 
 //     Part pause
@@ -152,14 +149,13 @@ Block task
     {
         TestItem        item;   // current item
 
-
         on_event:entry()
         {
             // Randomize test items table.
             if (shuffle_test_items() != OK) terminate;
 
             num_cycles = test_items.size;
-//            num_cycles = 3;
+            //num_cycles = 3;
 
             // Prepare test page: progress bar enabled, feedback and prompt 
             // disabled.
@@ -191,6 +187,7 @@ Block task
             {
                 // Add new row to test output table.
                 TestOutput output;
+
                 output.trialnum = test.cycle + 1;
                 output.id = item.id;
                 output.emotion = item.emotion;
@@ -211,16 +208,6 @@ Block task
             blank_page.action_auto(this, 500ms);
         }
     }
-}
-
-
-void setup(int output_table_number, 
-           string output_table_name, 
-           TestItem[] test_items)
-{
-    task.output_table_number   = output_table_number;
-    task.output_table_name     = output_table_name;
-    task.test_items            = test_items;
 }
 
 

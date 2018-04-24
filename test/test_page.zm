@@ -4,6 +4,7 @@ TODO
 
 import std_sound_output_device;
 import std_texts_en;
+import stimuli;
 
 
 Page test_page

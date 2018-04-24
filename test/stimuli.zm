@@ -1,6 +1,11 @@
 // somehow, plugins were not found
 plugin zep_file;
 
+// global
+//test_csv_file_name = "emotones.csv";
+
+
+
 //Symbolic definition of item type.
 enum ItemType
 {
@@ -11,9 +16,6 @@ enum ItemType
 }
 
 //import stimuli;
-
-
-
 
 // Item table record.
 record TestItem {
@@ -29,72 +31,32 @@ record TestItem {
     string alt4;
 }
 
-// arrays for practice and test
-TestItem[..] practice_items;
-TestItem[..] test_items;
+record PracticeItem {
+    int id;
+    ItemType emotion;
+    string sentence_fname;
+    string sentence_string;
+    
+    string alt1;
+    string alt2;
+    string alt3;
+    string alt4;
+}
 
+
+// arrays for practice and test
+//TestItem[..] practice_items;
+TestItem[..]     test_items;
 
 
 int load_stimuli()
 {
-    int status = OK;
-    if( read_csv(test_items, test_csv_file_name()) != OK) {
-        status = ERROR;
-        return status;
-    }
-    return status;
-}
+    int status;
+    string fn = stimuli_dir() + "test_items.csv";
 
-
-// loads in csv into the specified target
-int read_csv(TestItem[] target, string source)
-{
-    int err = target.load(stimuli_dir() + source,
-    true,           // if true, file contains a header row
-    0);             // number of lines to skip before header and data
-    if (err) {
-        println("Trouble loading from " + source);
-        return err;         
-    }
-
-    return OK;
-     // Load data into test_items table.
-}
-
-
-// Provides the csv file name based on participant data.
-string test_csv_file_name()
-{
-    string name = "emotones.csv";
-    return name;
-}
-
-// checks files if in TestItem are okay
-int check_files(TestItem[] target, string filename)
-{
-    println("Checking existance of audio files given " + filename);
-
-    int status = OK;
-
-    int index = 0;
-    while(index < target.size)
-    {
-        string sentence_path = stimuli_dir() + "sounds/" + 
-            target[index].sentence_fname;
-        if( !file_okay(sentence_path)) status = ERROR;
-
-        index++;
-    }
+    status = test_items.load(fn, true, 0);
 
     return status;
 }
 
-// Checks if a file is both existent and readable
-bool file_okay(string filepath)
-{
-    bool okay = file_exists(filepath) && file_readable(filepath);
-    if(!okay)
-        println("Problems with " + filepath);
 
-    return okay;
-}
