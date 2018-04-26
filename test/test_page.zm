@@ -10,6 +10,7 @@ import stimuli;
 Page test_page
 {
     TestItem    item;           // trial control parameters
+    
 
 
     init()
@@ -114,7 +115,9 @@ Page test_page
                 {
                     init()
                     {
-                        text = TOPL_BUTTON_TEXT;
+                        //text = TOPL_BUTTON_TEXT;
+                        text = string(item.alt1);
+                        println(item.alt1);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
@@ -134,7 +137,8 @@ Page test_page
                 {
                     init()
                     {
-                        text = TOPR_BUTTON_TEXT;
+                        //text = TOPR_BUTTON_TEXT;
+                        text = string(item.alt2);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
@@ -164,7 +168,8 @@ Page test_page
                 {
                     init()
                     {
-                        text = BOTL_BUTTON_TEXT;
+                        //text = BOTL_BUTTON_TEXT;
+                        text = string(item.alt3);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
@@ -183,7 +188,8 @@ Page test_page
                 {
                     init()
                     {
-                        text = BOTR_BUTTON_TEXT;
+                        //text = BOTR_BUTTON_TEXT;
+                        text = string(item.alt4);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
@@ -209,6 +215,18 @@ Page test_page
             // Return fixation offset time.
             return canvas.fixation.expected_finish_time;
         }
+
+        
+        // fill buttons
+        void set_button_text(TestItem item)
+        {
+            buttons.topbuttons.button1.text = item.alt1;
+            buttons.topbuttons.button2.text = item.alt2;
+            buttons.botbuttons.button3.text = item.alt3;
+            buttons.botbuttons.button4.text = item.alt4;
+               
+        }
+
 
 
         void reset()
@@ -352,6 +370,9 @@ Page test_page
         control.target = null;
     }
 
+    // randomises the button altenatives
+
+    
 
     // Starts a trial.
     void action(Object caller, TestItem it, time tref, int count=-1)
@@ -371,6 +392,8 @@ Page test_page
         // Start fixation symbol.
         time fixoffset = layout.start_fixation(tref);
 
+        //set button labels
+        layout.set_button_text(item);
 
         // Start stimulus at fixation offset.
         time stimonset = stimulus.play(fixoffset);
