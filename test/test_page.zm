@@ -437,7 +437,8 @@ Page test_page
         control.set_status(
             string(item.id) + "  " + 
             string(item.emotion) + "  " + 
-            string(item.sentence_fname));
+            string(item.sentence_fname) + 
+            string(item.sentence_string));
 
 
         // Remember who to signal when the trial is over.
