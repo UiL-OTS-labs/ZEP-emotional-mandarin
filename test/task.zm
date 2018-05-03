@@ -192,9 +192,20 @@ Block task
                 output.id = item.id;
                 output.emotion = item.emotion;
                 output.sentence_fname = item.sentence_fname;
+                output.sentence_string = item.sentence_string;
+                
                 output.value = test_page.response.value;
                 output.rt = test_page.response.rt;
                 output.correct = test_page.response.correct;
+                
+                output.alt_chosen = test_page.response.chosen_alt;
+                output.correct_button = test_page.item.correct_button;
+                
+                output.alt1 = test_page.item.alt1;
+                output.alt2 = test_page.item.alt2;
+                output.alt3 = test_page.item.alt3;
+                output.alt4 = test_page.item.alt4;
+                
                 test_output_append(output);
             }
         }

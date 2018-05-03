@@ -27,8 +27,11 @@ record TestOutput
     string      alt2;
     string      alt3;
     string      alt4;
+    
     string      alt_chosen;
-    string      alt_correct;
+    //string      alt_correct;
+    
+    int         correct_button;
     bool        answer_correct;
     
     int         value;          // response value: 0=no, 1=yes, -1=timeout
