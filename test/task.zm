@@ -42,7 +42,7 @@ Block task
     {
         //println(test_items);
         //println(test_items.size);
-        task.num_cycles = test_items.size;
+        
         //experiment.setup_response_box();
         control.button_box.open();
 

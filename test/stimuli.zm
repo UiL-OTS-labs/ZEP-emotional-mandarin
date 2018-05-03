@@ -29,6 +29,8 @@ record TestItem {
     string alt2;
     string alt3;
     string alt4;
+
+    int correct_button;
 }
 
 record PracticeItem {
@@ -41,6 +43,8 @@ record PracticeItem {
     string alt2;
     string alt3;
     string alt4;
+
+    int correct_button;
 }
 
 

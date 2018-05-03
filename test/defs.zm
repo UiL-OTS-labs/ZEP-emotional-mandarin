@@ -25,5 +25,5 @@ const dur       FEEDBACK_DURATION               = 1000ms;
 
 // Duration of the response interval. A value of 0ms means there is no
 // timeout.
-const dur       RESPONSE_DURATION               = 2000ms;       // auto-paced
-//const dur       RESPONSE_DURATION               = 0ms;          // self-paced
+//const dur       RESPONSE_DURATION               = 2000ms;       // auto-paced
+const dur       RESPONSE_DURATION               = 0ms;          // self-paced

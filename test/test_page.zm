@@ -93,6 +93,8 @@ Page test_page
         }
 
 
+
+
         VerticalLayout buttons
         {
 
@@ -180,7 +182,7 @@ Page test_page
 
                     on_event:activate()
                     {
-                        response.process_hit(1, event_time);
+                        response.process_hit(2, event_time);
                     }
                 }
 
@@ -200,7 +202,7 @@ Page test_page
 
                     on_event:activate()
                     {
-                        response.process_hit(1, event_time);
+                        response.process_hit(3, event_time);
                     }
                 }    
             }
@@ -266,13 +268,14 @@ Page test_page
         int     value;          // response value: 0=no, 1=yes, -1=timeout
         int     rt;             // response time [ms]
         int     correct;        // correct response: 0=no, 1=yes, -1=n.a.
-
+        string  chosen_alt;
 
         void clear()
         {
             value = -1;
             rt = -9999;
             correct = -1;
+            chosen_alt = "";
         }
 
 
@@ -286,9 +289,31 @@ Page test_page
             {
                 value = val;
                 rt = int(reaction_time(0));
-                correct = 
-                    (item.emotion != NEUTRAL && val == 1) ||
-                    (item.emotion == NEUTRAL && val == 0);
+                // correct = 
+                //     (item.emotion != NEUTRAL && val == 1) ||
+                //     (item.emotion == NEUTRAL && val == 0);
+
+                correct = (val == item.correct_button);
+                
+                if ( val == 0)
+                    chosen_alt = item.alt1;
+                else if (val == 1)
+                    chosen_alt = item.alt2;
+                else if (val == 2)
+                    chosen_alt = item.alt3;
+                else if (val == 3)
+                    chosen_alt = item.alt4;
+                else
+                    print_error(" RRRROR Nothing chosen! ");
+
+
+
+
+
+
+                println ("Chosen button value = " + chosen_alt);
+                println ("Correct item_button = " + item.correct_button);
+                println ("was is correct? ..." + correct);
 
                 ignore_remaining_hits();
 
