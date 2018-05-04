@@ -119,7 +119,6 @@ Page test_page
                     {
                         //text = TOPL_BUTTON_TEXT;
                         text = string(item.alt1);
-                        println(item.alt1);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
@@ -312,6 +311,7 @@ Page test_page
 
 
                 println ("Chosen button value = " + chosen_alt);
+                println ("Chosen button index = " + val );
                 println ("Correct item_button = " + item.correct_button);
                 println ("was is correct? ..." + correct);
 
@@ -368,8 +368,7 @@ Page test_page
         test_page_overlay.setup(this);
 
         // Show or hide prompt.
-        test_page_overlay.show_prompt(pr ? 
-            "which is the second word?" : "");
+        test_page_overlay.show_prompt(pr ? "Which is the second word?" : "");
 
         // Enable or disable the progress bar.
         test_page_overlay.show_progress_bar(ntrials);   // disabled if < 0
@@ -381,8 +380,10 @@ Page test_page
         // Enable button-box buttons 0 and 1 for resp. no(0) and yes(1).
         control.target = this;
         control.button_box.disable_buttons();
-        control.button_box.enable_button(0, 0); // button 0 means no(0)
-        control.button_box.enable_button(1, 1); // button 1 means yes(1)
+        control.button_box.enable_button(0, 0); //but 0 (top left), index 0
+        control.button_box.enable_button(1, 2); //but 1 (bottom left), index 2
+        control.button_box.enable_button(3, 1); //but 3 (top right), index 1
+        control.button_box.enable_button(2, 3); //but 2 (bottom right), index 3
     }
 
 

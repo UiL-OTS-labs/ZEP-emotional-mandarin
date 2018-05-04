@@ -71,7 +71,7 @@ Block task
 //                "Alternatively you can use the left or right shift keys.\n"
 
                 "\n"
-                "First we will skip the short practice.\n"
+                "First we will do a short practice.\n"
                 "\n"
 //                "<i>Hit Enter when ready to start.</i>", 
                 "<i>Hit any button on the button-box when ready to start.</i>", 
@@ -83,66 +83,66 @@ Block task
     }
 
 
-//     Block practice
-//     {
-//         TestItem        item;   // current item
+    Block practice
+    {
+        TestItem        item;   // current item
 
 
-//         on_event:entry()
-//         {
-//             num_cycles = practice_items.size;
+        on_event:entry()
+        {
+            num_cycles = practice_items.size;
 
-//             // Prepare test page: progress bar, feedback and prompt enabled.
-//             test_page.setup(num_cycles, true, true);
-//         }
-
-
-//         on_event:exit()
-//         {
-//             test_page.cleanup();
-//         }
+            // Prepare test page: progress bar, feedback and prompt enabled.
+            test_page.setup(num_cycles, true, true);
+        }
 
 
-//         Trial trial
-//         {
-//             on_event:entry()
-//             {
-//                 item = practice_items[practice.cycle];
-
-//                 test_page.action(this, item, reference_time, practice.cycle);
-//             }
-//         }
-//     }
+        on_event:exit()
+        {
+            test_page.cleanup();
+        }
 
 
-//     Part
-//     {
-//         on_event:entry()
-//         {
-//             blank_page.action_auto(this, 500ms);
-//         }
-//     }
+        Trial trial
+        {
+            on_event:entry()
+            {
+                item = practice_items[practice.cycle];
+
+                test_page.action(this, item, reference_time, practice.cycle);
+            }
+        }
+    }
 
 
-//     Part pause
-//     {
-//         on_event:entry()
-//         {
-//             pause_page.set_text(
-//                 "End of the practice part.\n"
-//                 "\n"
-//                 "If you have any questions at this moment please ask the "
-//                 "experimenter now.\n"
-//                 "\n"
-// //                "<i>Hit Enter when ready to proceed.</i>", 
-//                 "<i>Hit any button on the button-box when ready to "
-//                 "proceed.</i>", 
-//                 true);
+    Part
+    {
+        on_event:entry()
+        {
+            blank_page.action_auto(this, 500ms);
+        }
+    }
 
-//             pause_page.action(this);
-//             control.button_box.enable_all_buttons(CONTINUE);
-//         }
-//     }
+
+    Part pause
+    {
+        on_event:entry()
+        {
+            pause_page.set_text(
+                "End of the practice part.\n"
+                "\n"
+                "If you have any questions at this moment please ask the "
+                "experimenter now.\n"
+                "\n"
+//                "<i>Hit Enter when ready to proceed.</i>", 
+                "<i>Hit any button on the button-box when ready to "
+                "proceed.</i>", 
+                true);
+
+            pause_page.action(this);
+            control.button_box.enable_all_buttons(CONTINUE);
+        }
+    }
 
 
     Block test

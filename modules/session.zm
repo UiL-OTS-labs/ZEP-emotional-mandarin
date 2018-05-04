@@ -28,6 +28,11 @@ int setup_pre_session()
 // accessible.
 int setup_session()
 {
+	int status = test::load_practice_stimuli();
+	if (status != OK)
+		return status;
 	return test::load_stimuli();
     //return OK;
 }
+
+

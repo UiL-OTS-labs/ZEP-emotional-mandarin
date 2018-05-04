@@ -49,7 +49,7 @@ record PracticeItem {
 
 
 // arrays for practice and test
-//TestItem[..] practice_items;
+TestItem[..] practice_items;
 TestItem[..]     test_items;
 
 
@@ -63,4 +63,13 @@ int load_stimuli()
     return status;
 }
 
+int load_practice_stimuli()
+{
+    int status;
+    string fn = stimuli_dir() + "test_items.csv";
+
+    status = practice_items.load(fn, true, 0);
+
+    return status;
+}
 
