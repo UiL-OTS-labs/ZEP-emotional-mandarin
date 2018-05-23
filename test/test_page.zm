@@ -6,6 +6,8 @@ import std_sound_output_device;
 import std_texts_en;
 import stimuli;
 
+plugin zep_display;
+
 
 Page test_page
 {
@@ -60,10 +62,6 @@ Page test_page
         response.process_hit(message_arg, event_time);
     }
 
-    // LabelGadget for simple text
-
-
-
     VerticalLayout layout
     {
         init()
@@ -83,6 +81,9 @@ Page test_page
                 font_size = 28;
                 font_family = "Arial Narrow";
                 font_weight = FONT_WEIGHT_BOLD;
+
+                hor_alignment = ALIGN_BEGIN;
+                ver_alignment = ALIGN_BEGIN;
  
                 fill_pattern_color = WINDOW_COLOR;
                 text_color = color:black;
@@ -99,6 +100,9 @@ Page test_page
                 font_size = 28;
                 font_family = "Arial Narrow";
                 font_weight = FONT_WEIGHT_BOLD;
+
+                hor_alignment = ALIGN_BEGIN;
+                ver_alignment = ALIGN_BEGIN;
  
                 fill_pattern_color = WINDOW_COLOR;
                 text_color = color:black;
@@ -116,7 +120,11 @@ Page test_page
                 font_size = 28;
                 font_family = "Arial Narrow";
                 font_weight = FONT_WEIGHT_BOLD;
- 
+
+                hor_alignment = ALIGN_BEGIN;
+                ver_alignment = ALIGN_BEGIN;
+
+
                 fill_pattern_color = WINDOW_COLOR;
                 text_color = color:black;
             }
@@ -170,7 +178,7 @@ Page test_page
                 {
                     init()
                     {
-                        text = TOPL_BUTTON_TEXT;
+                        text = TOPL_BUTTON_TEXT, true;
                         //text = string(item.alt1);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
@@ -191,7 +199,7 @@ Page test_page
                 {
                     init()
                     {
-                        text = TOPR_BUTTON_TEXT;
+                        text = TOPR_BUTTON_TEXT, true;
                         //text = string(item.alt2);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = 20 ;//TEST_PAGE_BUTTON_FONT_SIZE;
@@ -222,7 +230,7 @@ Page test_page
                 {
                     init()
                     {
-                        text = BOTL_BUTTON_TEXT;
+                        text = BOTL_BUTTON_TEXT, true;
                         //text = string(item.alt3);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
@@ -242,7 +250,7 @@ Page test_page
                 {
                     init()
                     {
-                        text = BOTR_BUTTON_TEXT;
+                        text = BOTR_BUTTON_TEXT, true;
                         //text = string(item.alt4);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
                         font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
