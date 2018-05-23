@@ -3,7 +3,7 @@ id;emotion;pretarget_fname;pretarget_cn;pretarget_en;pretarget_pinyin;target_fna
 2;NEUTRAL;pre_neutral.wav;请指出;please point to;qing3 zhi3 chu1;ma2_neutral.wav;麻;hemp;ma2;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;2
 3;NEUTRAL;pre_neutral.wav;请指出;please point to;qing3 zhi3 chu1;ma3_neutral.wav;马;horse;ma3;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;3
 4;NEUTRAL;pre_neutral.wav;请指出;please point to;qing3 zhi3 chu1;ma4_neutral.wav;骂;scold;ma4;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;4
-5;HAPPY;pre_happy.wav;请指出;please point to;qing3 zhi3 chu1;ma1_happyl.wav;妈;mother;ma1;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;1
+5;HAPPY;pre_happy.wav;请指出;please point to;qing3 zhi3 chu1;ma1_happy.wav;妈;mother;ma1;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;1
 6;HAPPY;pre_happy.wav;请指出;please point to;qing3 zhi3 chu1;ma2_happy.wav;麻;hemp;ma2;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;2
 7;HAPPY;pre_happy.wav;请指出;please point to;qing3 zhi3 chu1;ma3_happy.wav;马;horse;ma3;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;3
 8;HAPPY;pre_happy.wav;请指出;please point to;qing3 zhi3 chu1;ma4_happy.wav;骂;scold;ma4;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;4
