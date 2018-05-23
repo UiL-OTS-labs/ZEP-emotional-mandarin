@@ -61,7 +61,7 @@ Block task
                 "\n"
                 "Thank you for participating in this experiment.\n"
                 "\n"
-                "I wish you all the best.\n"
+                "TODO: Specifics (Yachan)\n"
 
 //                "To respond, hit the left shift key for <i>No</i> and the "
 //                "right shift key for <i>Yes</i>.\n"
@@ -195,7 +195,7 @@ Block task
                 output.pretarget_fname  = item.pretarget_fname;
                 output.pretarget_cn     = item.pretarget_cn;
                 output.pretarget_en     = item.pretarget_en;
-                
+
                 output.target_fname     = item.target_fname;
                 output.target_cn        = item.target_cn;
                 output.target_en        = item.target_en;
