@@ -70,6 +70,14 @@ Page test_page
             height = 0;     // 0 means as large as possible
         }
 
+        // HorizontalLayout hlayout
+        // {
+        //     init()
+        //     {
+        //         spacing = 50;
+        //         height = 0;     // 0 means as large as possible
+        //         options = LAYOUT_EQUAL_WIDTH;
+        //     }
 
         LabelGadget label_cn
         {
@@ -78,7 +86,7 @@ Page test_page
                 text = CHINESE_PRE + CLOSE_TXT + CHINESE_POST;
                 is_wrapping = false;
  
-                font_size = 28;
+                font_size = 50;
                 font_family = "Arial Narrow";
                 font_weight = FONT_WEIGHT_BOLD;
 
