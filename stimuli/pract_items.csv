@@ -1,0 +1,5 @@
+id;emotion;pretarget_fname;pretarget_cn;pretarget_en;pretarget_pinyin;target_fname;target_cn;target_en;target_pinyin;posttarget_fname;posttarget_cn;posttarget_en;posttarget_pinyin;correct_tone
+1;NEUTRAL;pre_neutral.wav;请指出;please point to;qing3 zhi3 chu1;ma1_neutral.wav;妈;mother;ma1;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;1
+2;HAPPY;pre_happy.wav;请指出;please point to;qing3 zhi3 chu1;ma2_happy.wav;麻;hemp;ma2;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;2
+3;SAD;pre_sad.wav;请指出;please point to;qing3 zhi3 chu1;ma3_sad.wav;马;horse;ma3;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;3
+4;FEARFUL;pre_fearful.wav;请指出;please point to;qing3 zhi3 chu1;ma4_fearful.wav;骂;scold;ma4;post_neutral.wav;2字给我看;for me to see;zi4 gei3 wo3 kan4;4

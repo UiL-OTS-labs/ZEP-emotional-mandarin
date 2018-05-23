@@ -17,21 +17,28 @@ HISTORY:
 // Test output table record.
 record TestOutput
 {
-    int         trialnum;       // trial number
+    int         trialnum;           // trial number
+    int         id;                 // item id
+    ItemType    emotion;            // item emotion
+    
+    string      pretarget_fname;    // pre filler filename
+    string      pretarget_cn;       // pre sentence string 
+    string      pretarget_en;       // target word
+    string      pretarget_pinyin;   //
+    
+    string      target_fname;       //
+    string      target_cn;          //
+    string      target_en;
+    string      target_pinyin;
 
-    int         id;             // item id
-    ItemType    emotion;        // item emotion
-    string      sentence_fname;         // stimulus word sound filename
-    string      sentence_string;
-    string      alt1;
-    string      alt2;
-    string      alt3;
-    string      alt4;
+    string      posttarget_fname;   // target_identifier
+    string      posttarget_cn;
+    string      posttarget_en;
+    string      posttarget_pinyin;
+   
+    int         correct_tone;       // which was the correct tone
     
-    string      alt_chosen;
-    //string      alt_correct;
-    
-    int         correct_button;
+    int         tone_chosen;
     bool        answer_correct;
     
     int         value;          // response value: 0=no, 1=yes, -1=timeout
@@ -39,6 +46,9 @@ record TestOutput
     int         correct;        // correct response: 0=no, 1=yes, -1=n.a.
 }
 
+// id;emotion;pretarget_fname;pretarget_ch;pretarget_en;pretarget_pinyin;
+//target_fname;target_ch;target_en;target_pinyin;posttarget_fname;posttarget_ch;posttarget_pinyin;
+//correct_tone
 
 // Test output table.
 TestOutput[..] test_output;

@@ -20,32 +20,65 @@ enum ItemType
 // Item table record.
 record TestItem {
 
-    int id;
-    ItemType emotion;
-    string sentence_fname;
-    string sentence_string;
+    int         id;                
+    ItemType    emotion;        
     
-    string alt1;
-    string alt2;
-    string alt3;
-    string alt4;
+    string      pretarget_fname;
+    string      pretarget_cn; 
+    string      pretarget_en; 
+    string      pretarget_pinyin;
+    
+    string      target_fname;
+    string      target_cn; 
+    string      target_en;
+    string      target_pinyin;
 
-    int correct_button;
+    string      posttarget_fname; 
+    string      posttarget_cn;
+    string      posttarget_en;
+    string      posttarget_pinyin;
+   
+    int         correct_tone;
 }
 
+
+// Item table record.
 record PracticeItem {
-    int id;
-    ItemType emotion;
-    string sentence_fname;
-    string sentence_string;
-    
-    string alt1;
-    string alt2;
-    string alt3;
-    string alt4;
 
-    int correct_button;
+    int         id;                
+    ItemType    emotion;        
+    
+    string      pretarget_fname; 
+    string      pretarget_cn; 
+    string      pretarget_en; 
+    string      pretarget_pinyin;
+    
+    string      target_fname;
+    string      target_cn; 
+    string      target_en;
+    string      target_pinyin;
+
+    string      posttarget_fname; 
+    string      posttarget_cn;
+    string      posttarget_en;
+    string      posttarget_pinyin;
+   
+    int         correct_tone;
 }
+
+//record PracticeItem {
+//    int id;
+//    ItemType emotion;
+//    string sentence_fname;
+//    string sentence_string;
+//    
+//    string alt1;
+//    string alt2;
+//    string alt3;
+//    string alt4;
+
+//    int correct_button;
+//}
 
 
 // arrays for practice and test
@@ -66,7 +99,7 @@ int load_stimuli()
 int load_practice_stimuli()
 {
     int status;
-    string fn = stimuli_dir() + "test_items.csv";
+    string fn = stimuli_dir() + "pract_items.csv";
 
     status = practice_items.load(fn, true, 0);
 

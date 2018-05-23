@@ -60,6 +60,9 @@ Page test_page
         response.process_hit(message_arg, event_time);
     }
 
+    // LabelGadget for simple text
+
+
 
     VerticalLayout layout
     {
@@ -67,6 +70,56 @@ Page test_page
         {
             spacing = 50;
             height = 0;     // 0 means as large as possible
+        }
+
+
+        LabelGadget label_cn
+        {
+            init()
+            {
+                text = CHINESE_PRE + CLOSE_TXT + CHINESE_POST;
+                is_wrapping = false;
+ 
+                font_size = 28;
+                font_family = "Arial Narrow";
+                font_weight = FONT_WEIGHT_BOLD;
+ 
+                fill_pattern_color = WINDOW_COLOR;
+                text_color = color:black;
+            }
+        }
+
+        LabelGadget label_pinyin
+        {
+            init()
+            {
+                text = PINYIN_PRE + CLOSE_TXT + PINYIN_POST;
+                is_wrapping = false;
+ 
+                font_size = 28;
+                font_family = "Arial Narrow";
+                font_weight = FONT_WEIGHT_BOLD;
+ 
+                fill_pattern_color = WINDOW_COLOR;
+                text_color = color:black;
+            }
+        }
+
+
+        LabelGadget label_en
+        {
+            init()
+            {
+                text = ENGLISH_PRE + CLOSE_TXT + ENGLISH_POST;
+                is_wrapping = false;
+ 
+                font_size = 28;
+                font_family = "Arial Narrow";
+                font_weight = FONT_WEIGHT_BOLD;
+ 
+                fill_pattern_color = WINDOW_COLOR;
+                text_color = color:black;
+            }
         }
 
 
@@ -117,10 +170,10 @@ Page test_page
                 {
                     init()
                     {
-                        //text = TOPL_BUTTON_TEXT;
-                        text = string(item.alt1);
+                        text = TOPL_BUTTON_TEXT;
+                        //text = string(item.alt1);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = TEST_PAGE_BUTTON_FONT_SIZE;
+                        font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 200, 100;
@@ -138,10 +191,10 @@ Page test_page
                 {
                     init()
                     {
-                        //text = TOPR_BUTTON_TEXT;
-                        text = string(item.alt2);
+                        text = TOPR_BUTTON_TEXT;
+                        //text = string(item.alt2);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = TEST_PAGE_BUTTON_FONT_SIZE;
+                        font_size = 20 ;//TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 200, 100;
@@ -169,10 +222,10 @@ Page test_page
                 {
                     init()
                     {
-                        //text = BOTL_BUTTON_TEXT;
-                        text = string(item.alt3);
+                        text = BOTL_BUTTON_TEXT;
+                        //text = string(item.alt3);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = TEST_PAGE_BUTTON_FONT_SIZE;
+                        font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 200, 100;
@@ -189,10 +242,10 @@ Page test_page
                 {
                     init()
                     {
-                        //text = BOTR_BUTTON_TEXT;
-                        text = string(item.alt4);
+                        text = BOTR_BUTTON_TEXT;
+                        //text = string(item.alt4);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = TEST_PAGE_BUTTON_FONT_SIZE;
+                        font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 200, 100;
@@ -218,15 +271,15 @@ Page test_page
         }
 
         
-        // fill buttons
-        void set_button_text(TestItem item)
-        {
-            buttons.topbuttons.button1.text = item.alt1;
-            buttons.topbuttons.button2.text = item.alt2;
-            buttons.botbuttons.button3.text = item.alt3;
-            buttons.botbuttons.button4.text = item.alt4;
+        // // fill buttons
+        // void set_button_text(TestItem item)
+        // {
+        //     buttons.topbuttons.button1.text = item.alt1;
+        //     buttons.topbuttons.button2.text = item.alt2;
+        //     buttons.botbuttons.button3.text = item.alt3;
+        //     buttons.botbuttons.button4.text = item.alt4;
                
-        }
+        // }
 
 
 
@@ -252,7 +305,7 @@ Page test_page
             abort();
 
             playback.device = sound_output_device;
-            clip.file = stimuli_dir() + "sounds/" + item.sentence_fname;
+            clip.file = stimuli_dir() + "sounds/" + item.target_fname;
 
             start(t);
 
@@ -267,14 +320,14 @@ Page test_page
         int     value;          // response value: 0=no, 1=yes, -1=timeout
         int     rt;             // response time [ms]
         int     correct;        // correct response: 0=no, 1=yes, -1=n.a.
-        string  chosen_alt;
+        int     tone_chosen;
 
         void clear()
         {
             value = -1;
             rt = -9999;
             correct = -1;
-            chosen_alt = "";
+            // chosen_alt = "";
         }
 
 
@@ -292,27 +345,25 @@ Page test_page
                 //     (item.emotion != NEUTRAL && val == 1) ||
                 //     (item.emotion == NEUTRAL && val == 0);
 
-                correct = (val == item.correct_button);
+                correct = (val + 1 == item.correct_tone);
                 
                 if ( val == 0)
-                    chosen_alt = item.alt1;
+                    tone_chosen = 1;
                 else if (val == 1)
-                    chosen_alt = item.alt2;
+                    tone_chosen = 2;
                 else if (val == 2)
-                    chosen_alt = item.alt3;
+                    tone_chosen = 3;
                 else if (val == 3)
-                    chosen_alt = item.alt4;
+                    tone_chosen = 4;
                 else
                     print_error(" RRRROR Nothing chosen! ");
 
 
 
 
-
-
-                println ("Chosen button value = " + chosen_alt);
+                println ("Chosen button value = " + tone_chosen);
                 println ("Chosen button index = " + val );
-                println ("Correct item_button = " + item.correct_button);
+                println ("Correct item_button = " + item.correct_tone);
                 println ("was is correct? ..." + correct);
 
                 ignore_remaining_hits();
@@ -368,7 +419,7 @@ Page test_page
         test_page_overlay.setup(this);
 
         // Show or hide prompt.
-        test_page_overlay.show_prompt(pr ? "Which is the second word?" : "");
+        test_page_overlay.show_prompt(pr ? "Of which tone is the ___ word?" : "");
 
         // Enable or disable the progress bar.
         test_page_overlay.show_progress_bar(ntrials);   // disabled if < 0
@@ -419,7 +470,8 @@ Page test_page
         time fixoffset = layout.start_fixation(tref);
 
         //set button labels
-        layout.set_button_text(item);
+
+        //layout.set_button_text(item);
 
         // Start stimulus at fixation offset.
         time stimonset = stimulus.play(fixoffset);
@@ -438,8 +490,10 @@ Page test_page
         control.set_status(
             string(item.id) + "  " + 
             string(item.emotion) + "  " + 
-            string(item.sentence_fname) + 
-            string(item.sentence_string));
+            string(item.pretarget_fname) +  " " + 
+            string(item.pretarget_en) + " " + 
+            string(item.target_fname) + " " + 
+            string(item.target_en));
 
 
         // Remember who to signal when the trial is over.

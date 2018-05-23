@@ -27,3 +27,21 @@ const dur       FEEDBACK_DURATION               = 1000ms;
 // timeout.
 //const dur       RESPONSE_DURATION               = 2000ms;       // auto-paced
 const dur       RESPONSE_DURATION               = 0ms;          // self-paced
+
+const string	TOPL_BUTTON_TEXT                = "Tone 1 \n\n(High level)";
+const string	TOPR_BUTTON_TEXT                = "Tone 2 \n\n(Rising)";
+const string	BOTL_BUTTON_TEXT                = "Tone 3 \n\n(Falling-rising)";
+const string	BOTR_BUTTON_TEXT                = "Tone 4 \n\n(Falling)";
+
+const string    CHINESE_PRE                     = "请指出 ";
+const string    CHINESE_POST                    = " 字给我看 ";
+
+const string    ENGLISH_PRE                     = "Please point to ";
+const string    ENGLISH_POST                    = " for me to see.";
+
+const string    PINYIN_PRE                      = "qing3 zhi3 chu1 ";
+const string    PINYIN_POST                     = " zi4 gei3 wo3 kan4 ";
+
+const string    CLOSE_TXT                       = "___";
+
+

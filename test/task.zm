@@ -188,23 +188,33 @@ Block task
                 // Add new row to test output table.
                 TestOutput output;
 
-                output.trialnum = test.cycle + 1;
-                output.id = item.id;
-                output.emotion = item.emotion;
-                output.sentence_fname = item.sentence_fname;
-                output.sentence_string = item.sentence_string;
+                output.trialnum         = test.cycle + 1;
+                output.id               = item.id;
+                output.emotion          = item.emotion;
+
+                output.pretarget_fname  = item.pretarget_fname;
+                output.pretarget_cn     = item.pretarget_cn;
+                output.pretarget_en     = item.pretarget_en;
                 
-                output.value = test_page.response.value;
-                output.rt = test_page.response.rt;
-                output.correct = test_page.response.correct;
+                output.target_fname     = item.target_fname;
+                output.target_cn        = item.target_cn;
+                output.target_en        = item.target_en;
+
+                output.posttarget_fname = item.posttarget_fname;
+                output.posttarget_cn    = item.posttarget_cn;
+                output.posttarget_en    = item.posttarget_en;
+
+                output.value            = test_page.response.value;
+                output.rt               = test_page.response.rt;
+                output.correct          = test_page.response.correct;
                 
-                output.alt_chosen = test_page.response.chosen_alt;
-                output.correct_button = test_page.item.correct_button;
+                output.tone_chosen      = test_page.response.tone_chosen;
+                output.correct_tone     = test_page.item.correct_tone;
                 
-                output.alt1 = test_page.item.alt1;
-                output.alt2 = test_page.item.alt2;
-                output.alt3 = test_page.item.alt3;
-                output.alt4 = test_page.item.alt4;
+                // output.alt1 = test_page.item.alt1;
+                // output.alt2 = test_page.item.alt2;
+                // output.alt3 = test_page.item.alt3;
+                // output.alt4 = test_page.item.alt4;
                 
                 test_output_append(output);
             }

@@ -1,0 +1,300 @@
+/******************************************************************************\
+FILE:           test_page_overlay.zm
+AUTHOR:         Theo Veenker <theo.veenker@beexy.nl>
+ADAPTED BY:     -
+
+DESCRIPTION:
+
+Provides graphics to be used as overlay on an experiment test page. The
+overlay contains a prompt label, a feedback label and a progress bar.
+
+
+HISTORY:
+2012-03-27 TV   Created as part of the standard Zep modules.
+
+\******************************************************************************/
+
+
+VerticalLayout test_page_overlay
+{
+    Page        curpage;        // current page displayed on
+
+
+    VerticalLayout main
+    {
+        init()
+        {
+            height = 0;     // 0 means as large as possible
+            top_margin = 50;
+            bottom_margin = 50;
+            options = LAYOUT_ATTACH_TOP | LAYOUT_ATTACH_BOTTOM;
+        }
+
+
+        LabelGadget prompt
+        {
+            init()
+            {
+                font_family = TEST_PAGE_PROMPT_FONT_FAMILY;
+                font_size = TEST_PAGE_PROMPT_FONT_SIZE;
+                text_color = TEST_PAGE_PROMPT_TEXT_COLOR;
+                hor_alignment = ALIGN_BEGIN;
+            }
+        }
+
+
+        LabelGadget feedback
+        {
+            bool    enabled;
+            real    correctness;
+
+
+            init()
+            {
+                font_family = TEST_PAGE_LABEL_FONT_FAMILY;
+                font_size = FONT_SIZE_XXLARGE;
+                text_color = color:black;
+                height = 50;
+            }
+
+
+            on_event:pre_start()
+            {
+                update();
+            }
+
+
+            on_event:pre_finish()
+            {
+                text = "";
+                fill_pattern_color = color:none;
+            }
+
+
+            on_event:finish()
+            {
+                signal_target(CONTINUE);    // tell caller we're done
+                target = null;
+            }
+
+
+            void update()
+            {
+                if (!enabled) return;
+
+                if (correctness > 0)
+                {
+                    text = " \u2714 ";      // check mark symbol (V-like)
+                    fill_pattern_color = rgb:80F080;
+                }
+                else if (correctness < 0)
+                {
+                    text = " \u2718 ";      // ballot symbol (cross)
+                    fill_pattern_color = rgb:F08080;
+                }
+                else
+                {
+                    text = "?";
+                }
+            }
+
+
+            void reset()
+            {
+                abort();
+                text = "";
+                fill_pattern_color = color:none;
+            }
+        }
+    }
+
+
+    ProgressBarGadget status
+    {
+        int     maxcount;       // counter maximum (invisible if < 0)
+
+
+        init()
+        {
+            font_family = TEST_PAGE_STATUS_FONT_FAMILY;
+            font_size = TEST_PAGE_STATUS_FONT_SIZE;
+            fill_pattern_color = TEST_PAGE_STATUS_COLOR;
+            text_color = TEST_PAGE_STATUS_TEXT_COLOR;
+            bar_color = TEST_PAGE_STATUS_BAR_COLOR;
+            hor_alignment = ALIGN_END;
+            margin = 4;
+            width = 0;      // 0 means as large as possible
+        }
+    }
+
+
+    //==========================================================================
+
+
+    void show_prompt(string s, bool markup=false)
+    {
+        main.prompt.text = s, markup;
+    }
+
+
+    void hide_prompt()
+    {
+        main.prompt.text = "";
+    }
+
+
+    void set_prompt_top_offset(int o)
+    {
+        main.top_margin = o;
+    }
+
+
+    bool feedback_enabled()
+    {
+        return main.feedback.enabled;
+    }
+
+
+    void enable_feedback(bool b)
+    {
+        main.feedback.enabled = b;
+        if (!main.feedback.enabled) main.feedback.reset();
+    }
+
+
+    bool show_feedback(real correctness)
+    {
+        if (!main.feedback.enabled) return false;
+
+        main.feedback.correctness = correctness;
+        main.feedback.update();
+
+        return true;
+    }
+
+
+    bool hide_feedback()
+    {
+        if (!main.feedback.enabled) return false;
+
+        main.feedback.reset();
+
+        return true;
+    }
+
+
+    bool start_feedback(real correctness, dur d)
+    {
+        if (!main.feedback.enabled) return false;
+
+        main.feedback.correctness = correctness;
+        main.feedback.start(now(), d);
+
+        return true;
+    }
+
+
+    bool start_feedback(real correctness, dur d, time t)
+    {
+        if (!main.feedback.enabled) return false;
+
+        main.feedback.correctness = correctness;
+        main.feedback.start(t, d);
+
+        return true;
+    }
+
+
+    bool start_feedback(Object caller, real correctness, dur d)
+    {
+        if (!main.feedback.enabled) return false;
+
+        main.feedback.correctness = correctness;
+        main.feedback.start(now(), d);
+        main.feedback.target = caller;
+
+        return true;
+    }
+
+
+    bool start_feedback(Object caller, real correctness, dur d, time t)
+    {
+        if (!main.feedback.enabled) return false;
+
+        main.feedback.correctness = correctness;
+        main.feedback.start(t, d);
+        main.feedback.target = caller;
+
+        return true;
+    }
+
+
+    void set_feedback_bottom_offset(int o)
+    {
+        main.bottom_margin = o;
+    }
+
+
+    void show_progress_bar(int ntrials)
+    {
+        // Set progress counter maximum. Special values: 0 means no maximum,
+        // < 0 means hide progress bar.
+        status.maxcount = ntrials;
+        status.value = 0;
+        status.is_managed = status.maxcount >= 0;
+    }
+
+
+    void hide_progress_bar()
+    {
+        status.maxcount = -1;
+        status.is_managed = false;
+    }
+
+
+    void update_progress_bar(int count)
+    {
+        status.value = 0;
+        if (count >= 0)
+        {
+            if (status.maxcount > 0)
+            {
+                status.text = " " + string(count+1) +
+                    " / " + string(status.maxcount)+ " ";
+//                  status.text = " " + string(status.maxcount - count)+ " ";
+                status.value = count / real(status.maxcount);
+            }
+            else
+            {
+                status.text = " " + string(count+1)+ " ";
+            }
+        }
+    }
+
+
+    void finish_progress_bar()
+    {
+        status.text = "";
+        status.value = 1;
+    }
+
+
+    void setup(Page page)
+    {
+        if (curpage != null) curpage.overlay = null;
+        curpage = page;
+        if (curpage != null) curpage.overlay = this;
+
+        hide_prompt();
+        hide_feedback();
+        hide_progress_bar();
+    }
+
+
+    void cleanup()
+    {
+        hide_prompt();
+        hide_feedback();
+        finish_progress_bar();
+    }
+}
