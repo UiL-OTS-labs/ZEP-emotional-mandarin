@@ -39,6 +39,8 @@ record TestItem {
     string      posttarget_pinyin;
    
     int         correct_tone;
+    int         target_onset;
+    int         target_offset;
 }
 
 
@@ -64,6 +66,8 @@ record PracticeItem {
     string      posttarget_pinyin;
    
     int         correct_tone;
+    int         target_onset;
+    int         target_offset;
 }
 
 //record PracticeItem {

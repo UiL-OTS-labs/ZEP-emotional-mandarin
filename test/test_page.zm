@@ -167,8 +167,23 @@ Page test_page
                     line_pattern_color = color:crimson;
                 }
             }
-        }
 
+
+            RectangleShape syncsquare
+            {
+                init()
+                {
+                    corner_radius = 5;
+                    width = 400;
+                    height = 80;
+                    x = -width / 2;
+                    y = -height / 2;
+                    line_pattern_color = color:black;
+                    fill_pattern_color = color:blue;
+                }
+            }
+
+        }
 
 
 
@@ -294,16 +309,7 @@ Page test_page
             return canvas.fixation.expected_finish_time;
         }
 
-        
-        // // fill buttons
-        // void set_button_text(TestItem item)
-        // {
-        //     buttons.topbuttons.button1.text = item.alt1;
-        //     buttons.topbuttons.button2.text = item.alt2;
-        //     buttons.botbuttons.button3.text = item.alt3;
-        //     buttons.botbuttons.button4.text = item.alt4;
-               
-        // }
+ 
         void set_carrier_text(TestItem item)
         {   
             layout.label_cn.text = (item.pretarget_cn + 
@@ -316,7 +322,19 @@ Page test_page
                                     CLOSE_TXT + item.posttarget_en);
         }
 
+        dur get_target_duration(TestItem item)
+        {
+            dur duration = item.target_offset - item.target_onset;
 
+            return duration;
+        }
+
+        time start_target_check(time t, dur d)
+        {
+            canvas.syncsquare.start(t, d);
+
+            return canvas.syncsquare.expected_finish_time;
+        }
 
 
         void reset()
@@ -344,8 +362,9 @@ Page test_page
             clip.file = stimuli_dir() + "sounds/" + item.target_fname;
 
             start(t);
-
-            return expected_start_time;
+            //+ the time as specified in the item list, 
+            //is becomes the start-time for allowing first reponse
+            return expected_start_time; //+ dur item.target_offset; 
         }
     }
 
@@ -393,9 +412,6 @@ Page test_page
                     tone_chosen = 4;
                 else
                     print_error(" RRRROR Nothing chosen! ");
-
-
-
 
                 println ("Chosen button value = " + tone_chosen);
                 println ("Chosen button index = " + val );
@@ -482,10 +498,7 @@ Page test_page
         control.button_box.disable_buttons();
         control.target = null;
     }
-
-    // randomises the button altenatives
-
-    
+   
 
     // Starts a trial.
     void action(Object caller, TestItem it, time tref, int count=-1)
@@ -501,23 +514,30 @@ Page test_page
         // Reset response data.
         response.clear();
 
+        //set translation labels
+        layout.set_carrier_text(item);
+
+        // get the anticipated duration
+        dur target_dur = layout.get_target_duration(item);
+        println (target_dur);
+
 
         // Start fixation symbol.
         time fixoffset = layout.start_fixation(tref);
 
-        //set translation labels
-        //set button labels
-        layout.set_carrier_text(item);
 
         //layout.set_button_text(item);
 
-        // Start stimulus at fixation offset.
-        time stimonset = stimulus.play(fixoffset);
+        // Start audio stimulus at fixation offset.
+        time subonset = stimulus.play(fixoffset);
+
+        // Start the subselection animation
+        time targetonset = layout.start_target_check(subonset, target_dur);
 
 
         // Response interval starts at stimulus onset. Timeout after 
         // RESPONSE_DURATION unless this duration is 0s or less.
-        response.start(stimonset, RESPONSE_DURATION);
+        response.start(targetonset, RESPONSE_DURATION);
 
 
         // Update progress counter (if enabled).
@@ -528,8 +548,6 @@ Page test_page
         control.set_status(
             string(item.id) + "  " + 
             string(item.emotion) + "  " + 
-            string(item.pretarget_fname) +  " " + 
-            string(item.pretarget_en) + " " + 
             string(item.target_fname) + " " + 
             string(item.target_en));
 
