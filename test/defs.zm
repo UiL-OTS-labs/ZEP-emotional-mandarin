@@ -1,7 +1,7 @@
 /******************************************************************************\
 FILE:           defs.zm
 AUTHOR:         Theo Veenker <theo.veenker@beexy.nl>
-ADAPTED BY:     -
+ADAPTED BY:     Jacco van Elst
 
 DESCRIPTION:
 
@@ -11,37 +11,39 @@ Defines experiment settings such as for trial timing.
 HISTORY:
 2011-10-25 TV   Created.
 
+
 \******************************************************************************/
 
 
 // Duration of the interval between two trials.
-const dur       INTERTRIAL_INTERVAL = 1000ms;
+const dur     INTERTRIAL_INTERVAL = 500ms;
 
 // Duration of the fixation symbol presentation.
-const dur       FIXATION_DURATION   = 1000ms;
+const dur     FIXATION_DURATION   = 500ms;
 
 // Duration of the feedback presentation.
-const dur       FEEDBACK_DURATION   = 1000ms;
+const dur     FEEDBACK_DURATION   = 1000ms;
 
 // Duration of the response interval. A value of 0ms means there is no
 // timeout.
 //const dur       RESPONSE_DURATION               = 2000ms;       // auto-paced
-const dur       RESPONSE_DURATION   = 0ms;          // self-paced
+const dur       RESPONSE_DURATION  = 0ms;          // self-paced
 
-const string	TOPL_BUTTON_TEXT    = M"<b>Tone 1</b>\n<sub>(High level)</sub>";
-const string	TOPR_BUTTON_TEXT    = M"<b>Tone 2</b>\n<sub>(Rising)</sub>";
-const string	BOTL_BUTTON_TEXT    = M"<b>Tone 3</b>\n<sub>(Falling-rising)</sub>";
-const string	BOTR_BUTTON_TEXT    = M"<b>Tone 4</b>\n<sub>(Falling)</sub>";
+const string    TOPL_BUTTON_TEXT = M"<b>Tone 1</b>\n<sub>(High level)</sub>";
+const string	TOPR_BUTTON_TEXT = M"<b>Tone 2</b>\n<sub>(Rising)</sub>";
+const string	BOTL_BUTTON_TEXT = M"<b>Tone 3</b>\n<sub>(Falling-rising)</sub>";
+const string	BOTR_BUTTON_TEXT = M"<b>Tone 4</b>\n<sub>(Falling)</sub>";
 
-const string    CHINESE_PRE         = "请指出 ";
-const string    CHINESE_POST        = " 字给我看 ";
+//constant for the to guess word
+const string    CLOSE_TXT        = "___";
 
-const string    ENGLISH_PRE         = "Please point to ";
-const string    ENGLISH_POST        = " for me to see.";
+//these constants were for a configuration in which all carrier sentence parts
+// are the same throughout the task
+const string    CHINESE_PRE      = "请指出 ";
+const string    CHINESE_POST     = " 字给我看 ";
 
-const string    PINYIN_PRE          = "qing3 zhi3 chu1 ";
-const string    PINYIN_POST         = " zi4 gei3 wo3 kan4 ";
+const string    ENGLISH_PRE      = "Please point to ";
+const string    ENGLISH_POST     = " for me to see.";
 
-const string    CLOSE_TXT           = "___";
-
-
+const string    PINYIN_PRE       = "qing3 zhi3 chu1 ";
+const string    PINYIN_POST      = " zi4 gei3 wo3 kan4 ";

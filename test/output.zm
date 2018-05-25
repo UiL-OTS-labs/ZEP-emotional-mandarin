@@ -1,7 +1,7 @@
 /******************************************************************************\
 FILE:           output.zm
 AUTHOR:         Theo Veenker <theo.veenker@beexy.nl>
-ADAPTED BY:     -
+ADAPTED BY:     Jacco van Elst
 
 DESCRIPTION:
 
@@ -24,15 +24,15 @@ record TestOutput
     string      pretarget_fname;    // pre filler filename
     string      pretarget_cn;       // pre sentence string 
     string      pretarget_en;       // target word
-    string      pretarget_pinyin;   //
+    string      pretarget_pinyin;   // roman chinese + tone
     
-    string      target_fname;       //
-    string      target_cn;          //
-    string      target_en;
-    string      target_pinyin;
+    string      target_fname;       // file name of the audio file
+    string      target_cn;          // the target word in CN chars
+    string      target_en;          // ... and EN
+    string      target_pinyin;      // ... and pinyin style
 
     string      posttarget_fname;   // target_identifier
-    string      posttarget_cn;
+    string      posttarget_cn;     
     string      posttarget_en;
     string      posttarget_pinyin;
    
@@ -40,15 +40,19 @@ record TestOutput
     
     int         tone_chosen;
     bool        answer_correct;
+
+    int         rel_target_onset;   // onset of target relative to the audio file
+    int         rel_target_offset;  // ... and offset
     
-    int         value;          // response value: 0=no, 1=yes, -1=timeout
-    int         rt;             // response time [ms]
-    int         correct;        // correct response: 0=no, 1=yes, -1=n.a.
+    int         value;              // response value: 0=no, 1=yes, -1=timeout
+    int         rt;                 // response time [ms]
+    int         correct;            // correct response: 0=no, 1=yes, -1=n.a.
 }
 
+//CSV HEADERS
 // id;emotion;pretarget_fname;pretarget_ch;pretarget_en;pretarget_pinyin;
 //target_fname;target_ch;target_en;target_pinyin;posttarget_fname;posttarget_ch;posttarget_pinyin;
-//correct_tone
+//correct_tone;target_onset;target_offset
 
 // Test output table.
 TestOutput[..] test_output;

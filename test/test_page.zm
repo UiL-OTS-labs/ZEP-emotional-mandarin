@@ -55,7 +55,6 @@ Page test_page
     //        event_time);
     //}
 
-
     on_event:message()
     {
         // Process button-box message. See setup() below.
@@ -70,14 +69,6 @@ Page test_page
             height = 0;     // 0 means as large as possible
         }
 
-        // HorizontalLayout hlayout
-        // {
-        //     init()
-        //     {
-        //         spacing = 50;
-        //         height = 0;     // 0 means as large as possible
-        //         options = LAYOUT_EQUAL_WIDTH;
-        //     }
 
         LabelGadget label_cn
         {
@@ -85,7 +76,7 @@ Page test_page
             {
                 text = string(item.pretarget_cn + 
                                 CLOSE_TXT + 
-                                item.posttarget_cn);//CHINESE_PRE + CLOSE_TXT + CHINESE_POST;
+                                item.posttarget_cn);
                 is_wrapping = false;
  
                 font_size = 50;
@@ -127,7 +118,6 @@ Page test_page
         {
             init()
             {
-                //text = ENGLISH_PRE + CLOSE_TXT + ENGLISH_POST;
                 text = string(item.pretarget_en + 
                                 CLOSE_TXT + 
                                 item.posttarget_en);
@@ -168,7 +158,8 @@ Page test_page
                 }
             }
 
-
+            // to visually inspect if the target_onset and target_offset
+            // behave as exected
             RectangleShape syncsquare
             {
                 init()
@@ -210,9 +201,8 @@ Page test_page
                     init()
                     {
                         text = TOPL_BUTTON_TEXT, true;
-                        //text = string(item.alt1);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
+                        font_size = 20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 200, 100;
@@ -231,9 +221,8 @@ Page test_page
                     init()
                     {
                         text = TOPR_BUTTON_TEXT, true;
-                        //text = string(item.alt2);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 20 ;//TEST_PAGE_BUTTON_FONT_SIZE;
+                        font_size = 20 ;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 200, 100;
@@ -262,9 +251,8 @@ Page test_page
                     init()
                     {
                         text = BOTL_BUTTON_TEXT, true;
-                        //text = string(item.alt3);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
+                        font_size = 20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 200, 100;
@@ -282,9 +270,8 @@ Page test_page
                     init()
                     {
                         text = BOTR_BUTTON_TEXT, true;
-                        //text = string(item.alt4);
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 20; //TEST_PAGE_BUTTON_FONT_SIZE;
+                        font_size = 20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 200, 100;
@@ -299,7 +286,7 @@ Page test_page
             }
         }
 
-
+        //fixation cross flow
         time start_fixation(time t)
         {
             // Start fixation cross.
@@ -309,7 +296,7 @@ Page test_page
             return canvas.fixation.expected_finish_time;
         }
 
- 
+        // display the character info for the participant 
         void set_carrier_text(TestItem item)
         {   
             layout.label_cn.text = (item.pretarget_cn + 
@@ -322,6 +309,7 @@ Page test_page
                                     CLOSE_TXT + item.posttarget_en);
         }
 
+        // calculate a neat duration for the sub-audio target word
         dur get_target_duration(TestItem item)
         {
             dur duration = item.target_offset - item.target_onset;
@@ -329,6 +317,8 @@ Page test_page
             return duration;
         }
 
+        // to be able to inspect timing behaviour
+        // this rectangle should coincide with target word presentation
         time start_target_check(time t, dur d)
         {
             canvas.syncsquare.start(t, d);
@@ -362,8 +352,7 @@ Page test_page
             clip.file = stimuli_dir() + "sounds/" + item.target_fname;
 
             start(t);
-            //+ the time as specified in the item list, 
-            //is becomes the start-time for allowing first reponse
+
             return expected_start_time; //+ dur item.target_offset; 
         }
     }
@@ -396,9 +385,6 @@ Page test_page
             {
                 value = val;
                 rt = int(reaction_time(0));
-                // correct = 
-                //     (item.emotion != NEUTRAL && val == 1) ||
-                //     (item.emotion == NEUTRAL && val == 0);
 
                 correct = (val + 1 == item.correct_tone);
                 
@@ -411,7 +397,7 @@ Page test_page
                 else if (val == 3)
                     tone_chosen = 4;
                 else
-                    print_error(" RRRROR Nothing chosen! ");
+                    print_error(" ERRRROR! Nothing chosen.");
 
                 println ("Chosen button value = " + tone_chosen);
                 println ("Chosen button index = " + val );
@@ -425,6 +411,7 @@ Page test_page
             else if (validity == HIT_TOO_EARLY || validity == HIT_TOO_LATE)
             {
                 // False alarm. Deal with this if desired.
+                //TODO: ask Yachan!
             }
         }
 
@@ -471,7 +458,8 @@ Page test_page
         test_page_overlay.setup(this);
 
         // Show or hide prompt.
-        test_page_overlay.show_prompt(pr ? "Of which tone is the ___ word?" : "");
+        test_page_overlay.show_prompt(pr ? 
+                                        "Of which tone is the ___ word?" : "");
 
         // Enable or disable the progress bar.
         test_page_overlay.show_progress_bar(ntrials);   // disabled if < 0
@@ -519,21 +507,17 @@ Page test_page
 
         // get the anticipated duration
         dur target_dur = layout.get_target_duration(item);
-        println (target_dur);
+        //println (target_dur);
 
 
         // Start fixation symbol.
         time fixoffset = layout.start_fixation(tref);
 
-
-        //layout.set_button_text(item);
-
         // Start audio stimulus at fixation offset.
         time subonset = stimulus.play(fixoffset);
 
-        // Start the subselection animation
+        // Start the subselection (target) animation
         time targetonset = layout.start_target_check(subonset, target_dur);
-
 
         // Response interval starts at stimulus onset. Timeout after 
         // RESPONSE_DURATION unless this duration is 0s or less.
@@ -550,7 +534,6 @@ Page test_page
             string(item.emotion) + "  " + 
             string(item.target_fname) + " " + 
             string(item.target_en));
-
 
         // Remember who to signal when the trial is over.
         target = caller;

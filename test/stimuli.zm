@@ -1,11 +1,6 @@
 // somehow, plugins were not found
 plugin zep_file;
 
-// global
-//test_csv_file_name = "emotones.csv";
-
-
-
 //Symbolic definition of item type.
 enum ItemType
 {
@@ -69,20 +64,6 @@ record PracticeItem {
     int         target_onset;
     int         target_offset;
 }
-
-//record PracticeItem {
-//    int id;
-//    ItemType emotion;
-//    string sentence_fname;
-//    string sentence_string;
-//    
-//    string alt1;
-//    string alt2;
-//    string alt3;
-//    string alt4;
-
-//    int correct_button;
-//}
 
 
 // arrays for practice and test

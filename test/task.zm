@@ -1,12 +1,11 @@
 /******************************************************************************\
 FILE:           task.zm
 AUTHOR:         Theo Veenker <theo.veenker@beexy.nl>
-ADAPTED BY:     -
+ADAPTED BY:     Jacco van Elst
 
 DESCRIPTION:
 
-Implementation of task: Auditory Lexical Decision
-See readme.txt for more information.
+
 
 
 Global structure of this experiment phase:
@@ -40,9 +39,7 @@ Block task
 {
     on_event:entry()
     {
-        //println(test_items);
-        //println(test_items.size);
-        
+
         //experiment.setup_response_box();
         control.button_box.open();
 
@@ -188,33 +185,31 @@ Block task
                 // Add new row to test output table.
                 TestOutput output;
 
-                output.trialnum         = test.cycle + 1;
-                output.id               = item.id;
-                output.emotion          = item.emotion;
+                output.trialnum           = test.cycle + 1;
+                output.id                 = item.id;
+                output.emotion            = item.emotion;
 
-                output.pretarget_fname  = item.pretarget_fname;
-                output.pretarget_cn     = item.pretarget_cn;
-                output.pretarget_en     = item.pretarget_en;
+                output.pretarget_fname    = item.pretarget_fname;
+                output.pretarget_cn       = item.pretarget_cn;
+                output.pretarget_en       = item.pretarget_en;
 
-                output.target_fname     = item.target_fname;
-                output.target_cn        = item.target_cn;
-                output.target_en        = item.target_en;
+                output.target_fname       = item.target_fname;
+                output.target_cn          = item.target_cn;
+                output.target_en          = item.target_en;
 
-                output.posttarget_fname = item.posttarget_fname;
-                output.posttarget_cn    = item.posttarget_cn;
-                output.posttarget_en    = item.posttarget_en;
+                output.posttarget_fname   = item.posttarget_fname;
+                output.posttarget_cn      = item.posttarget_cn;
+                output.posttarget_en      = item.posttarget_en;
 
-                output.value            = test_page.response.value;
-                output.rt               = test_page.response.rt;
-                output.correct          = test_page.response.correct;
+                output.value              = test_page.response.value;
+                output.rt                 = test_page.response.rt;
+                output.correct            = test_page.response.correct;
                 
-                output.tone_chosen      = test_page.response.tone_chosen;
-                output.correct_tone     = test_page.item.correct_tone;
+                output.tone_chosen        = test_page.response.tone_chosen;
+                output.correct_tone       = test_page.item.correct_tone;
                 
-                // output.alt1 = test_page.item.alt1;
-                // output.alt2 = test_page.item.alt2;
-                // output.alt3 = test_page.item.alt3;
-                // output.alt4 = test_page.item.alt4;
+                output.rel_target_onset   = test_page.item.target_onset;
+                output.rel_target_offset  = test_page.item.target_offset;
                 
                 test_output_append(output);
             }
