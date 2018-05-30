@@ -21,38 +21,46 @@ record TestOutput
     int         id;                 // item id
     ItemType    emotion;            // item emotion
     
-    string      pretarget_fname;    // pre filler filename
-    string      pretarget_cn;       // pre sentence string 
-    string      pretarget_en;       // target word
-    string      pretarget_pinyin;   // roman chinese + tone
+    string      stim_fname;         // audio file
     
-    string      target_fname;       // file name of the audio file
-    string      target_cn;          // the target word in CN chars
-    string      target_en;          // ... and EN
-    string      target_pinyin;      // ... and pinyin style
+    //LABELS USED
+    string      carrier_sent_cn;     //chinsel label
+    string      carrier_sent_pinyin; 
+    string      carrier_sent_en;   
+    
+    string      target_word_pinyin;
 
-    string      posttarget_fname;   // target_identifier
-    string      posttarget_cn;     
-    string      posttarget_en;
-    string      posttarget_pinyin;
-   
     int         correct_tone;       // which was the correct tone
-    
-    int         tone_chosen;
-    bool        answer_correct;
-
-    int         rel_target_onset;   // onset of target relative to the audio file
-    int         rel_target_offset;  // ... and offset
-    
+        
     int         value;              // response value: 0=no, 1=yes, -1=timeout
     int         rt;                 // response time [ms]
     int         correct;            // correct response: 0=no, 1=yes, -1=n.a.
+
+    int         tone_chosen;
+    bool        answer_correct;
 }
 
-//CSV HEADERS
-// id;emotion;pretarget_fname;pretarget_ch;pretarget_en;pretarget_pinyin;
-//target_fname;target_ch;target_en;target_pinyin;posttarget_fname;posttarget_ch;posttarget_pinyin;
-//correct_tone;target_onset;target_offset
+              // TestOutput output;
+
+              //   output.trialnum             = test.cycle + 1;
+              //   output.id                   = item.id;
+              //   output.emotion              = item.emotion;
+
+              //   output.stim_fname           = item.stim_fname;
+
+              //   output.carrier_sent_cn      = item.carrier_sent_cn;
+              //   output.carrier_sent_pinyin  = item.carrier_sent_pinyin;
+              //   output.carrier_sent_en      = item.carrier_sent_en;
+                
+              //   output.target_word_pinyin   = item.target_word_pinyin;
+              //   output.correct_tone         = item.correct_tone;
+
+              //   output.value                = test_page.response.value;
+              //   output.rt                   = test_page.response.rt;
+              //   output.correct              = test_page.response.correct;
+                
+              //   output.tone_chosen          = test_page.response.tone_chosen;
+
 
 // Test output table.
 TestOutput[..] test_output;

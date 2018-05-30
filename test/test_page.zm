@@ -5,6 +5,7 @@ TODO
 import std_sound_output_device;
 import std_texts_en;
 import stimuli;
+import defs;
 
 plugin zep_display;
 
@@ -69,80 +70,104 @@ Page test_page
             height = 0;     // 0 means as large as possible
         }
 
-
-        LabelGadget label_cn
+        CanvasGadget labelcanvas
         {
+
             init()
             {
-                text = string(item.pretarget_cn + 
-                                CLOSE_TXT + 
-                                item.posttarget_cn);
-                is_wrapping = false;
- 
-                font_size = 50;
-                font_family = "Arial Narrow";
-                font_weight = FONT_WEIGHT_BOLD;
+                fill_pattern_color = TEST_PAGE_COLOR;
+                size = 1080, 360;
+                offset_x = 0;//width / 2;
+                offset_y = 0;// height / 2;
+            }
 
-                hor_alignment = ALIGN_BEGIN;
-                ver_alignment = ALIGN_BEGIN;
- 
-                fill_pattern_color = WINDOW_COLOR;
-                text_color = color:black;
+
+            TextShape label_cn
+            {
+                on_event:init()
+                {
+                    //text = string(item.carrier_sent_cn);
+                    x = 360;
+                    y = 40;
+
+                    font_family         = "Arial Narrow";
+                    font_size           = 50;
+                    font_weight         = FONT_WEIGHT_BOLD;
+                    line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
+
+                    hor_alignment       = ALIGN_BEGIN;
+                    //ver_alignment       = ALIGN_BEGIN;
+                }
+            }
+
+
+            TextShape label_py
+            {
+                on_event:init()
+                {
+                    //text = string(item.carrier_sent_cn);
+                    x = 360;
+                    y = 180;
+                    font_family         = "Arial Narrow";
+                    font_size           = 28;
+                    font_weight         = FONT_WEIGHT_BOLD;
+                    line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
+                    hor_alignment       = ALIGN_BEGIN;
+                    // ver_alignment       = ALIGN_CENTER;
+                }
+            }
+
+            TextShape label_en
+            {
+                on_event:init()
+                {
+                    //text = string(item.carrier_sent_cn);
+                    x = 360;
+                    y = 300;
+                    font_family         = "Arial Narrow";
+                    font_size           = 28;
+                    font_weight         = FONT_WEIGHT_BOLD;
+                    line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
+                    hor_alignment       = ALIGN_BEGIN;
+                    // ver_alignment       = ALIGN_CENTER;
+                }
+            }
+
+            time present_labels(string cn,
+                                string py,
+                                string en,
+                                time t,
+                                dur d = LABEL_DURATION)
+            {
+                label_cn.text      = cn;
+                label_py.text      = py;
+                label_en.text      = en;
+                // put it
+                label_cn.start(t, d);
+                label_py.start(t, d);
+                label_en.start(t, d);
+                return label_en.expected_finish_time;
+            }
+
+            void clear_labels()
+            {
+                label_cn.abort();
+                label_cn.is_visible = false;
+                label_py.abort();
+                label_py.is_visible = false;
+                label_en.abort();
+                label_en.is_visible = false;
             }
         }
 
-        LabelGadget label_pinyin
-        {
-            init()
-            {
-                text = string(item.pretarget_pinyin + 
-                                CLOSE_TXT + 
-                                item.posttarget_pinyin);
-                //text = PINYIN_PRE + CLOSE_TXT + PINYIN_POST;
-                is_wrapping = false;
- 
-                font_size = 28;
-                font_family = "Arial Narrow";
-                font_weight = FONT_WEIGHT_BOLD;
-
-                hor_alignment = ALIGN_BEGIN;
-                ver_alignment = ALIGN_BEGIN;
- 
-                fill_pattern_color = WINDOW_COLOR;
-                text_color = color:black;
-            }
-        }
-
-
-        LabelGadget label_en
-        {
-            init()
-            {
-                text = string(item.pretarget_en + 
-                                CLOSE_TXT + 
-                                item.posttarget_en);
-                is_wrapping = false;
- 
-                font_size = 28;
-                font_family = "Arial Narrow";
-                font_weight = FONT_WEIGHT_BOLD;
-
-                hor_alignment = ALIGN_BEGIN;
-                ver_alignment = ALIGN_BEGIN;
-
-
-                fill_pattern_color = WINDOW_COLOR;
-                text_color = color:black;
-            }
-        }
-
+        //spacer?
 
         CanvasGadget canvas
         {
             init()
             {
                 fill_pattern_color = TEST_PAGE_STIMULUS_COLOR;
-                size = 450, 100;
+                size = 320, 210;
                 offset_x = width / 2;
                 offset_y = height / 2;
             }
@@ -158,24 +183,62 @@ Page test_page
                 }
             }
 
-            // to visually inspect if the target_onset and target_offset
-            // behave as exected
-            RectangleShape syncsquare
+            PolygonShape soundprime
             {
                 init()
                 {
-                    corner_radius = 5;
-                    width = 400;
-                    height = 80;
-                    x = -width / 2;
-                    y = -height / 2;
-                    line_pattern_color = color:black;
-                    fill_pattern_color = color:blue;
+                    num_points = 6;
+                    set_x(0, -20);
+                    set_y(0, -20);
+                    set_x(1, 20);
+                    set_y(1, -20);
+                    set_x(2, 20);
+                    set_y(2, 0);
+                    set_x(3, 40);
+                    set_y(3, 20);
+                    set_x(4, -40);
+                    set_y(4, 20);
+                    set_x(5, -20);
+                    set_y(5, 0);
+                    fill_pattern_color = color:black;
                 }
             }
 
-        }
 
+            ImageShape bboxim
+            {
+                init()
+                {
+                    image    = stimuli_dir() + "images/bbox_image.png";
+                    width    = 300;
+                    height   = 200;
+                    x        = -width/2;
+                    y        = -height/2;
+                }
+            }
+
+            // RectangleShape bboxim
+            // {
+            //     on_event:init()
+            //     {
+            //         corner_radius = 5;
+            //         width = 300;
+            //         height = 200;
+            //         x = -width / 2;
+            //         y = -height / 2;
+            //         line_pattern_color = color:black;
+            //         fill_pattern_color = color:green;
+            //         //is_visible = false;
+            //     }
+            // }
+
+            void clear_bbox()
+            {
+                bboxim.abort();
+                bboxim.is_visible = false;
+            }
+
+        }
 
 
         VerticalLayout buttons
@@ -286,6 +349,7 @@ Page test_page
             }
         }
 
+
         //fixation cross flow
         time start_fixation(time t)
         {
@@ -296,36 +360,20 @@ Page test_page
             return canvas.fixation.expected_finish_time;
         }
 
-        // display the character info for the participant 
-        void set_carrier_text(TestItem item)
-        {   
-            layout.label_cn.text = (item.pretarget_cn + 
-                                    CLOSE_TXT + item.posttarget_cn);
-
-            layout.label_pinyin.text = (item.pretarget_pinyin + 
-                                    CLOSE_TXT + item.posttarget_pinyin);
-
-            layout.label_en.text = (item.pretarget_en + 
-                                    CLOSE_TXT + item.posttarget_en);
-        }
-
-        // calculate a neat duration for the sub-audio target word
-        dur get_target_duration(TestItem item)
+        // present warning
+        time prime_audio(time t)
         {
-            dur duration = item.target_offset - item.target_onset;
-
-            return duration;
+            canvas.soundprime.start(t, PRIME_SOUND_DURATION);
+            return canvas.soundprime.expected_finish_time;
         }
 
-        // to be able to inspect timing behaviour
-        // this rectangle should coincide with target word presentation
-        time start_target_check(time t, dur d)
+        // present probe
+        time probe_response(time t, dur d)
         {
-            canvas.syncsquare.start(t, d);
-
-            return canvas.syncsquare.expected_finish_time;
+            canvas.bboxim.start(t, d);//BB_SYMBOL_DURATION);
+            return canvas.bboxim.expected_start_time;
         }
-
+  
 
         void reset()
         {
@@ -349,11 +397,11 @@ Page test_page
             abort();
 
             playback.device = sound_output_device;
-            clip.file = stimuli_dir() + "sounds/" + item.target_fname;
+            clip.file = stimuli_dir() + "sounds/" + item.stim_fname;
 
             start(t);
 
-            return expected_start_time; //+ dur item.target_offset; 
+            return expected_finish_time; //+ dur item.target_offset; 
         }
     }
 
@@ -446,6 +494,8 @@ Page test_page
         target = null;
 
         control.clear_status();
+            
+        layout.canvas.clear_bbox();
     }
 
 
@@ -502,27 +552,29 @@ Page test_page
         // Reset response data.
         response.clear();
 
-        //set translation labels
-        layout.set_carrier_text(item);
-
-        // get the anticipated duration
-        dur target_dur = layout.get_target_duration(item);
-        //println (target_dur);
-
-
-        // Start fixation symbol.
+        // Start fixation symbol, for whatevcer the reason.
         time fixoffset = layout.start_fixation(tref);
 
-        // Start audio stimulus at fixation offset.
-        time subonset = stimulus.play(fixoffset);
+
+        //time labeloffset = layout.set_carrier_text(item, fixoffset);
+        time labeloffset = layout.labelcanvas.present_labels(
+                                                    item.carrier_sent_cn, 
+                                                    item.carrier_sent_pinyin,
+                                                    item.carrier_sent_en, 
+                                                    fixoffset, LABEL_DURATION);
+
+        time primeoffset = layout.prime_audio(labeloffset);
+
+        time audio_end = stimulus.play(primeoffset);
+        
+        time whatever = layout.probe_response(audio_end, -1ms); 
 
         // Start the subselection (target) animation
-        time targetonset = layout.start_target_check(subonset, target_dur);
+        //time targetonset = layout.start_target_check(subonset, target_dur);
 
         // Response interval starts at stimulus onset. Timeout after 
         // RESPONSE_DURATION unless this duration is 0s or less.
-        response.start(targetonset, RESPONSE_DURATION);
-
+        response.start(audio_end, RESPONSE_DURATION);
 
         // Update progress counter (if enabled).
         test_page_overlay.update_progress_bar(count);
@@ -532,8 +584,8 @@ Page test_page
         control.set_status(
             string(item.id) + "  " + 
             string(item.emotion) + "  " + 
-            string(item.target_fname) + " " + 
-            string(item.target_en));
+            string(item.stim_fname) + " " + 
+            string(item.carrier_sent_en));
 
         // Remember who to signal when the trial is over.
         target = caller;

@@ -18,51 +18,32 @@ record TestItem {
     int         id;                
     ItemType    emotion;        
     
-    string      pretarget_fname;
-    string      pretarget_cn; 
-    string      pretarget_en; 
-    string      pretarget_pinyin;
-    
-    string      target_fname;
-    string      target_cn; 
-    string      target_en;
-    string      target_pinyin;
+    string      stim_fname;
 
-    string      posttarget_fname; 
-    string      posttarget_cn;
-    string      posttarget_en;
-    string      posttarget_pinyin;
-   
+    string      carrier_sent_cn;  
+    string      carrier_sent_pinyin;
+    string      carrier_sent_en;
+    
+    string      target_word_pinyin;
+
     int         correct_tone;
-    int         target_onset;
-    int         target_offset;
 }
 
 
 // Item table record.
 record PracticeItem {
-
     int         id;                
     ItemType    emotion;        
     
-    string      pretarget_fname; 
-    string      pretarget_cn; 
-    string      pretarget_en; 
-    string      pretarget_pinyin;
-    
-    string      target_fname;
-    string      target_cn; 
-    string      target_en;
-    string      target_pinyin;
+    string      stim_fname;
 
-    string      posttarget_fname; 
-    string      posttarget_cn;
-    string      posttarget_en;
-    string      posttarget_pinyin;
-   
+    string      carrier_sent_cn;  
+    string      carrier_sent_pinyin;
+    string      carrier_sent_en;
+    
+    string      target_word_pinyin;
+       
     int         correct_tone;
-    int         target_onset;
-    int         target_offset;
 }
 
 
@@ -84,7 +65,7 @@ int load_stimuli()
 int load_practice_stimuli()
 {
     int status;
-    string fn = stimuli_dir() + "pract_items.csv";
+    string fn = stimuli_dir() + "practice_items.csv";
 
     status = practice_items.load(fn, true, 0);
 

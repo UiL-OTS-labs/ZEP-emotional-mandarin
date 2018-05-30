@@ -185,31 +185,25 @@ Block task
                 // Add new row to test output table.
                 TestOutput output;
 
-                output.trialnum           = test.cycle + 1;
-                output.id                 = item.id;
-                output.emotion            = item.emotion;
+                output.trialnum             = test.cycle + 1;
+                output.id                   = item.id;
+                output.emotion              = item.emotion;
 
-                output.pretarget_fname    = item.pretarget_fname;
-                output.pretarget_cn       = item.pretarget_cn;
-                output.pretarget_en       = item.pretarget_en;
+                output.stim_fname           = item.stim_fname;
 
-                output.target_fname       = item.target_fname;
-                output.target_cn          = item.target_cn;
-                output.target_en          = item.target_en;
-
-                output.posttarget_fname   = item.posttarget_fname;
-                output.posttarget_cn      = item.posttarget_cn;
-                output.posttarget_en      = item.posttarget_en;
-
-                output.value              = test_page.response.value;
-                output.rt                 = test_page.response.rt;
-                output.correct            = test_page.response.correct;
+                output.carrier_sent_cn      = item.carrier_sent_cn;
+                output.carrier_sent_pinyin  = item.carrier_sent_pinyin;
+                output.carrier_sent_en      = item.carrier_sent_en;
                 
-                output.tone_chosen        = test_page.response.tone_chosen;
-                output.correct_tone       = test_page.item.correct_tone;
+                output.target_word_pinyin   = item.target_word_pinyin;
+                output.correct_tone         = item.correct_tone;
+
+                output.value                = test_page.response.value;
+                output.rt                   = test_page.response.rt;
+                output.correct              = test_page.response.correct;
                 
-                output.rel_target_onset   = test_page.item.target_onset;
-                output.rel_target_offset  = test_page.item.target_offset;
+                output.tone_chosen          = test_page.response.tone_chosen;
+                //output.correct_tone         = test_page.item.correct_tone;
                 
                 test_output_append(output);
             }

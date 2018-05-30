@@ -16,13 +16,21 @@ HISTORY:
 
 
 // Duration of the interval between two trials.
-const dur     INTERTRIAL_INTERVAL = 500ms;
+const dur     INTERTRIAL_INTERVAL   = 0ms; //500ms; // depends on 
 
 // Duration of the fixation symbol presentation.
-const dur     FIXATION_DURATION   = 500ms;
+const dur     FIXATION_DURATION     = 200ms;
+
+// Label display period
+const dur     LABEL_DURATION        = 400ms;
+
+const dur     PRIME_SOUND_DURATION  = 500ms;
+
+// right before people may respond, this symbol should be flashed 
+const dur     BB_SYMBOL_DURATION    = 200ms;
 
 // Duration of the feedback presentation.
-const dur     FEEDBACK_DURATION   = 1000ms;
+const dur     FEEDBACK_DURATION     = 1000ms;
 
 // Duration of the response interval. A value of 0ms means there is no
 // timeout.
@@ -34,16 +42,3 @@ const string	TOPR_BUTTON_TEXT = M"<b>Tone 2</b>\n<sub>(Rising)</sub>";
 const string	BOTL_BUTTON_TEXT = M"<b>Tone 3</b>\n<sub>(Falling-rising)</sub>";
 const string	BOTR_BUTTON_TEXT = M"<b>Tone 4</b>\n<sub>(Falling)</sub>";
 
-//constant for the to guess word
-const string    CLOSE_TXT        = "___";
-
-//these constants were for a configuration in which all carrier sentence parts
-// are the same throughout the task
-const string    CHINESE_PRE      = "请指出 ";
-const string    CHINESE_POST     = " 字给我看 ";
-
-const string    ENGLISH_PRE      = "Please point to ";
-const string    ENGLISH_POST     = " for me to see.";
-
-const string    PINYIN_PRE       = "qing3 zhi3 chu1 ";
-const string    PINYIN_POST      = " zi4 gei3 wo3 kan4 ";
