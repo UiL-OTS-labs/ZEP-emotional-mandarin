@@ -22,9 +22,9 @@ const dur     INTERTRIAL_INTERVAL   = 0ms; //500ms; // depends on
 const dur     FIXATION_DURATION     = 200ms;
 
 // Label display period
-const dur     LABEL_DURATION        = 400ms;
+const dur     LABEL_DURATION        = 2400ms;
 
-const dur     PRIME_SOUND_DURATION  = 500ms;
+const dur     PRIME_SOUND_DURATION  = 300ms;
 
 // right before people may respond, this symbol should be flashed 
 const dur     BB_SYMBOL_DURATION    = 200ms;

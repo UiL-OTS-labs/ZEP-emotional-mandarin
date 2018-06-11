@@ -66,7 +66,7 @@ Page test_page
     {
         init()
         {
-            spacing = 50;
+            spacing = 10; //50;
             height = 0;     // 0 means as large as possible
         }
 
@@ -76,7 +76,7 @@ Page test_page
             init()
             {
                 fill_pattern_color = TEST_PAGE_COLOR;
-                size = 1080, 360;
+                size = 800, 200;//1080, 360;
                 offset_x = 0;//width / 2;
                 offset_y = 0;// height / 2;
             }
@@ -87,11 +87,11 @@ Page test_page
                 on_event:init()
                 {
                     //text = string(item.carrier_sent_cn);
-                    x = 360;
-                    y = 40;
+                    x = 200;//360;
+                    y = 20;//40;
 
                     font_family         = "Arial Narrow";
-                    font_size           = 50;
+                    font_size           = 30;//50;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
 
@@ -106,10 +106,10 @@ Page test_page
                 on_event:init()
                 {
                     //text = string(item.carrier_sent_cn);
-                    x = 360;
-                    y = 180;
+                    x = 200;//360;
+                    y = 60;//180;
                     font_family         = "Arial Narrow";
-                    font_size           = 28;
+                    font_size           = 18;//28;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_BEGIN;
@@ -122,10 +122,10 @@ Page test_page
                 on_event:init()
                 {
                     //text = string(item.carrier_sent_cn);
-                    x = 360;
-                    y = 300;
+                    x = 200;//360;
+                    y = 120;//300;
                     font_family         = "Arial Narrow";
-                    font_size           = 28;
+                    font_size           = 18;//28;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_BEGIN;
@@ -246,7 +246,7 @@ Page test_page
 
             init()
             {
-                spacing = 50;
+                spacing = 10;//50;
                 options = LAYOUT_EQUAL_HEIGHT;
             }
 
@@ -254,7 +254,7 @@ Page test_page
             {
                 init()
                 {
-                    spacing = 50;
+                    spacing = 10;//50;
                     options = LAYOUT_EQUAL_WIDTH;
                 }
 
@@ -265,10 +265,10 @@ Page test_page
                     {
                         text = TOPL_BUTTON_TEXT, true;
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 20; 
+                        font_size = 10;//20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 200, 100;
+                        size = 100, 50;//200, 100;
                     }
 
 
@@ -285,10 +285,10 @@ Page test_page
                     {
                         text = TOPR_BUTTON_TEXT, true;
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 20 ;
+                        font_size = 10;//20 ;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 200, 100;
+                        size = 100, 50;//200, 100;
                     }
 
 
@@ -305,7 +305,7 @@ Page test_page
 
                 init()
                 {
-                    spacing = 50;
+                    spacing = 10;//50;
                     options = LAYOUT_EQUAL_WIDTH;
                 }
 
@@ -315,10 +315,10 @@ Page test_page
                     {
                         text = BOTL_BUTTON_TEXT, true;
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 20; 
+                        font_size = 10;//20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 200, 100;
+                        size = 100, 50;//200, 100;
                     }
 
 
@@ -334,10 +334,10 @@ Page test_page
                     {
                         text = BOTR_BUTTON_TEXT, true;
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 20; 
+                        font_size = 10;//20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 200, 100;
+                        size = 100, 50;//200, 100;
                     }
 
 
