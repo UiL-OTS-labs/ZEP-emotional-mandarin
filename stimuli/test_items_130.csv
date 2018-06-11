@@ -1,0 +1,253 @@
+id;emotion;stim_fname;carrier_sent_cn;carrier_sent_pinyin;carrier_sent_en;target_word_pinyin;correct_tone
+1;NEUTRAL;n_t1_mong_c1_3.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong1;1
+2;NEUTRAL;n_t2_mong_c1_3.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong2;2
+3;NEUTRAL;n_t3_mong_c1_3.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong3;3
+4;NEUTRAL;n_t4_mong_c1_3.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong4;4
+5;NEUTRAL;n_t1_mong_c2_3.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong1;1
+6;NEUTRAL;n_t2_mong_c2_3.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong2;2
+7;NEUTRAL;n_t3_mong_c2_3.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong3;3
+8;NEUTRAL;n_t4_mong_c2_2.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong4;4
+9;NEUTRAL;n_t1_mong_c3_3.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong1;1
+10;NEUTRAL;n_t2_mong_c3_3.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong2;2
+11;NEUTRAL;n_t3_mong_c3_3.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong3;3
+12;NEUTRAL;n_t4_mong_c3_3.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong4;4
+13;NEUTRAL;n_t1_mong_c4_3.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong1;1
+14;NEUTRAL;n_t2_mong_c4_3.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong2;2
+15;NEUTRAL;n_t3_mong_c4_3.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong3;3
+16;NEUTRAL;n_t4_mong_c4_3.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong4;4
+17;NEUTRAL;n_t1_ging_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging1;1
+18;NEUTRAL;n_t2_ging_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging2;2
+19;NEUTRAL;n_t3_ging_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging3;3
+20;NEUTRAL;n_t4_ging_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging4;4
+21;NEUTRAL;n_t1_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging1;1
+22;NEUTRAL;n_t2_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging2;2
+23;NEUTRAL;n_t3_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging3;3
+24;NEUTRAL;n_t4_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging4;4
+25;NEUTRAL;n_t1_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging1;1
+26;NEUTRAL;n_t2_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging2;2
+27;NEUTRAL;n_t3_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging3;3
+28;NEUTRAL;n_t4_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging4;4
+29;NEUTRAL;n_t1_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging1;1
+30;NEUTRAL;n_t2_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging2;2
+31;NEUTRAL;n_t3_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging3;3
+32;NEUTRAL;n_t4_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging4;4
+33;NEUTRAL;n_t1_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra1;1
+34;NEUTRAL;n_t2_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra2;2
+35;NEUTRAL;n_t3_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra3;3
+36;NEUTRAL;n_t4_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra4;4
+37;NEUTRAL;n_t1_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra1;1
+38;NEUTRAL;n_t2_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra2;2
+39;NEUTRAL;n_t3_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra3;3
+40;NEUTRAL;n_t4_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra4;4
+41;NEUTRAL;n_t1_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra1;1
+42;NEUTRAL;n_t2_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra2;2
+43;NEUTRAL;n_t3_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra3;3
+44;NEUTRAL;n_t4_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra4;4
+45;NEUTRAL;n_t1_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra1;1
+46;NEUTRAL;n_t2_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra2;2
+47;NEUTRAL;n_t3_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra3;3
+48;NEUTRAL;n_t4_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra4;4
+49;NEUTRAL;n_t1_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv1;1
+50;NEUTRAL;n_t2_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv2;2
+51;NEUTRAL;n_t3_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv3;3
+52;NEUTRAL;n_t4_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv4;4
+53;NEUTRAL;n_t1_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv1;1
+54;NEUTRAL;n_t2_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv2;2
+55;NEUTRAL;n_t3_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv3;3
+56;NEUTRAL;n_t4_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv4;4
+57;NEUTRAL;n_t1_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv1;1
+58;NEUTRAL;n_t2_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv2;2
+59;NEUTRAL;n_t3_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv3;3
+60;NEUTRAL;n_t4_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv4;4
+61;NEUTRAL;n_t1_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv1;1
+62;NEUTRAL;n_t2_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv2;2
+63;NEUTRAL;n_t3_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv3;3
+64;NEUTRAL;n_t4_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv4;4
+65;HAPPY;h_t1_mong_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong1;1
+66;HAPPY;h_t2_mong_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong2;2
+67;HAPPY;h_t3_mong_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong3;3
+68;HAPPY;h_t4_mong_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong4;4
+69;HAPPY;h_t1_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong1;1
+70;HAPPY;h_t2_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong2;2
+71;HAPPY;h_t3_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong3;3
+72;HAPPY;h_t4_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong4;4
+73;HAPPY;h_t1_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong1;1
+74;HAPPY;h_t2_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong2;2
+75;HAPPY;h_t3_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong3;3
+76;HAPPY;h_t4_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong4;4
+77;HAPPY;h_t1_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong1;1
+78;HAPPY;h_t2_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong2;2
+79;HAPPY;h_t3_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong3;3
+80;HAPPY;h_t4_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong4;4
+81;HAPPY;h_t1_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging1;1
+82;HAPPY;h_t2_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging2;2
+83;HAPPY;h_t3_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging3;3
+84;HAPPY;h_t4_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging4;4
+85;HAPPY;h_t1_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging1;1
+86;HAPPY;h_t2_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging2;2
+87;HAPPY;h_t3_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging3;3
+88;HAPPY;h_t4_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging4;4
+89;HAPPY;h_t1_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging1;1
+90;HAPPY;h_t2_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging2;2
+91;HAPPY;h_t3_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging3;3
+92;HAPPY;h_t4_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging4;4
+93;HAPPY;h_t1_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging1;1
+94;HAPPY;h_t2_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging2;2
+95;HAPPY;h_t3_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging3;3
+96;HAPPY;h_t4_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging4;4
+97;HAPPY;h_t1_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra1;1
+98;HAPPY;h_t2_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra2;2
+99;HAPPY;h_t3_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra3;3
+100;HAPPY;h_t4_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra4;4
+101;HAPPY;h_t1_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra1;1
+102;HAPPY;h_t2_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra2;2
+103;HAPPY;h_t3_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra3;3
+104;HAPPY;h_t4_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra4;4
+105;HAPPY;h_t1_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra1;1
+106;HAPPY;h_t2_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra2;2
+107;HAPPY;h_t3_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra3;3
+108;HAPPY;h_t4_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra4;4
+109;HAPPY;h_t1_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra1;1
+110;HAPPY;h_t2_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra2;2
+111;HAPPY;h_t3_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra3;3
+112;HAPPY;h_t4_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra4;4
+113;HAPPY;h_t1_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv1;1
+114;HAPPY;h_t2_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv2;2
+115;HAPPY;h_t3_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv3;3
+116;HAPPY;h_t4_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv4;4
+117;HAPPY;h_t1_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv1;1
+118;HAPPY;h_t2_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv2;2
+119;HAPPY;h_t3_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv3;3
+120;HAPPY;h_t4_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv4;4
+121;HAPPY;h_t1_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv1;1
+122;HAPPY;h_t2_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv2;2
+123;HAPPY;h_t3_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv3;3
+124;HAPPY;h_t4_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv4;4
+125;HAPPY;h_t1_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv1;1
+126;HAPPY;h_t2_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv2;2
+127;HAPPY;h_t3_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv3;3
+128;HAPPY;h_t4_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv4;4
+133;ANGRY;a_t1_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong1;1
+134;ANGRY;a_t2_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong2;2
+135;ANGRY;a_t3_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong3;3
+136;ANGRY;a_t4_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong4;4
+137;ANGRY;a_t1_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong1;1
+138;ANGRY;a_t2_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong2;2
+139;ANGRY;a_t3_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong3;3
+140;ANGRY;a_t4_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong4;4
+141;ANGRY;a_t1_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong1;1
+142;ANGRY;a_t2_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong2;2
+143;ANGRY;a_t3_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong3;3
+144;ANGRY;a_t4_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong4;4
+145;ANGRY;a_t1_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging1;1
+146;ANGRY;a_t2_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging2;2
+147;ANGRY;a_t3_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging3;3
+148;ANGRY;a_t4_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging4;4
+149;ANGRY;a_t1_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging1;1
+150;ANGRY;a_t2_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging2;2
+151;ANGRY;a_t3_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging3;3
+152;ANGRY;a_t4_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging4;4
+153;ANGRY;a_t1_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging1;1
+154;ANGRY;a_t2_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging2;2
+155;ANGRY;a_t3_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging3;3
+156;ANGRY;a_t4_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging4;4
+157;ANGRY;a_t1_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging1;1
+158;ANGRY;a_t2_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging2;2
+159;ANGRY;a_t3_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging3;3
+160;ANGRY;a_t4_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging4;4
+161;ANGRY;a_t1_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra1;1
+162;ANGRY;a_t2_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra2;2
+163;ANGRY;a_t3_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra3;3
+164;ANGRY;a_t4_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra4;4
+165;ANGRY;a_t1_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra1;1
+166;ANGRY;a_t2_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra2;2
+167;ANGRY;a_t3_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra3;3
+168;ANGRY;a_t4_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra4;4
+169;ANGRY;a_t1_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra1;1
+170;ANGRY;a_t2_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra2;2
+171;ANGRY;a_t3_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra3;3
+172;ANGRY;a_t4_ra_c3_2.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra4;4
+173;ANGRY;a_t1_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra1;1
+174;ANGRY;a_t2_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra2;2
+175;ANGRY;a_t3_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra3;3
+176;ANGRY;a_t4_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra4;4
+177;ANGRY;a_t1_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv1;1
+178;ANGRY;a_t2_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv2;2
+179;ANGRY;a_t3_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv3;3
+180;ANGRY;a_t4_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv4;4
+181;ANGRY;a_t1_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv1;1
+182;ANGRY;a_t2_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv2;2
+183;ANGRY;a_t3_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv3;3
+184;ANGRY;a_t4_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv4;4
+185;ANGRY;a_t1_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv1;1
+186;ANGRY;a_t2_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv2;2
+187;ANGRY;a_t3_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv3;3
+188;ANGRY;a_t4_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv4;4
+189;ANGRY;a_t1_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv1;1
+190;ANGRY;a_t2_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv2;2
+191;ANGRY;a_t3_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv3;3
+192;ANGRY;a_t4_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv4;4
+193;SAD;s_t1_mong_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong1;1
+194;SAD;s_t2_mong_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong2;2
+195;SAD;s_t3_mong_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong3;3
+196;SAD;s_t4_mong_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong4;4
+197;SAD;s_t1_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong1;1
+198;SAD;s_t2_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong2;2
+199;SAD;s_t3_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong3;3
+200;SAD;s_t4_mong_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong4;4
+201;SAD;s_t1_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong1;1
+202;SAD;s_t2_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong2;2
+203;SAD;s_t3_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong3;3
+204;SAD;s_t4_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong4;4
+205;SAD;s_t1_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong1;1
+206;SAD;s_t2_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong2;2
+207;SAD;s_t3_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong3;3
+208;SAD;s_t4_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong4;4
+209;SAD;s_t1_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging1;1
+210;SAD;s_t2_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging2;2
+211;SAD;s_t3_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging3;3
+212;SAD;s_t4_ging_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging4;4
+213;SAD;s_t1_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging1;1
+214;SAD;s_t2_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging2;2
+215;SAD;s_t3_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging3;3
+216;SAD;s_t4_ging_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ging4;4
+217;SAD;s_t1_ging_c3_2.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging1;1
+218;SAD;s_t2_ging_c3_2.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging2;2
+219;SAD;s_t3_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging3;3
+220;SAD;s_t4_ging_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ging4;4
+221;SAD;s_t1_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging1;1
+222;SAD;s_t2_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging2;2
+223;SAD;s_t3_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging3;3
+224;SAD;s_t4_ging_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ging4;4
+225;SAD;s_t1_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra1;1
+226;SAD;s_t2_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra2;2
+227;SAD;s_t3_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra3;3
+228;SAD;s_t4_ra_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ra4;4
+229;SAD;s_t1_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra1;1
+230;SAD;s_t2_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra2;2
+231;SAD;s_t3_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra3;3
+232;SAD;s_t4_ra_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;ra4;4
+233;SAD;s_t1_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra1;1
+234;SAD;s_t2_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra2;2
+235;SAD;s_t3_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra3;3
+236;SAD;s_t4_ra_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; ra4;4
+237;SAD;s_t1_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra1;1
+238;SAD;s_t2_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra2;2
+239;SAD;s_t3_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra3;3
+240;SAD;s_t4_ra_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; ra4;4
+241;SAD;s_t1_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv1;1
+242;SAD;s_t2_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv2;2
+243;SAD;s_t3_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv3;3
+244;SAD;s_t4_bv_c1_1.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; bv4;4
+245;SAD;s_t1_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv1;1
+246;SAD;s_t2_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv2;2
+247;SAD;s_t3_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv3;3
+248;SAD;s_t4_bv_c2_1.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;bv4;4
+249;SAD;s_t1_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv1;1
+250;SAD;s_t2_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv2;2
+251;SAD;s_t3_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv3;3
+252;SAD;s_t4_bv_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; bv4;4
+253;SAD;s_t1_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv1;1
+254;SAD;s_t2_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv2;2
+255;SAD;s_t3_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv3;3
+256;SAD;s_t4_bv_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; bv4;4
