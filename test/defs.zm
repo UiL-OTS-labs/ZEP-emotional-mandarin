@@ -19,10 +19,10 @@ HISTORY:
 const dur     INTERTRIAL_INTERVAL   = 0ms; //500ms; // depends on 
 
 // Duration of the fixation symbol presentation.
-const dur     FIXATION_DURATION     = 200ms;
+const dur     FIXATION_DURATION     = 500ms;
 
 // Label display period
-const dur     LABEL_DURATION        = 2400ms;
+const dur     LABEL_DURATION        = 2000ms;
 
 const dur     PRIME_SOUND_DURATION  = 300ms;
 

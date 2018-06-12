@@ -93,9 +93,10 @@ Page test_page
                     font_family         = "Arial Narrow";
                     font_size           = 30;//50;
                     font_weight         = FONT_WEIGHT_BOLD;
-                    line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
+                    line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
 
                     hor_alignment       = ALIGN_BEGIN;
+                    is_visible          = false;
                     //ver_alignment       = ALIGN_BEGIN;
                 }
             }
@@ -105,14 +106,15 @@ Page test_page
             {
                 on_event:init()
                 {
-                    //text = string(item.carrier_sent_cn);
+                    //text = string(item.carrier_sent_pinyin);
                     x = 200;//360;
                     y = 60;//180;
                     font_family         = "Arial Narrow";
                     font_size           = 18;//28;
                     font_weight         = FONT_WEIGHT_BOLD;
-                    line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
+                    line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_BEGIN;
+                    is_visible          = false;
                     // ver_alignment       = ALIGN_CENTER;
                 }
             }
@@ -121,41 +123,67 @@ Page test_page
             {
                 on_event:init()
                 {
-                    //text = string(item.carrier_sent_cn);
+                    //text = string(item.carrier_sent_en);
                     x = 200;//360;
                     y = 120;//300;
                     font_family         = "Arial Narrow";
                     font_size           = 18;//28;
                     font_weight         = FONT_WEIGHT_BOLD;
-                    line_pattern_color = TEST_PAGE_STIMULUS_TEXT_COLOR;
+                    line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_BEGIN;
+                    is_visible          = false;
                     // ver_alignment       = ALIGN_CENTER;
                 }
             }
 
+            // time present_labels(string cn,
+            //                     string py,
+            //                     string en,
+            //                     time t,
+            //                     dur d = LABEL_DURATION)
+            // {
+            //     label_cn.text      = cn;
+            //     label_py.text      = py;
+            //     label_en.text      = en;
+            //     // put it
+            //     label_cn.start(t, d);
+            //     label_py.start(t, d);
+            //     label_en.start(t, d);
+            //     return label_en.expected_finish_time;
+            // }
+
             time present_labels(string cn,
                                 string py,
                                 string en,
-                                time t,
-                                dur d = LABEL_DURATION)
+                                time t)
             {
                 label_cn.text      = cn;
                 label_py.text      = py;
                 label_en.text      = en;
+
+                //make stuff visible
+                label_cn.is_visible = true;
+                label_py.is_visible = true;
+                label_en.is_visible = true;
+
                 // put it
-                label_cn.start(t, d);
-                label_py.start(t, d);
-                label_en.start(t, d);
-                return label_en.expected_finish_time;
+                label_cn.start(t);
+                label_py.start(t);
+                label_en.start(t);
+
+                return label_en.expected_start_time;
             }
 
-            void clear_labels()
+
+            void hide_labels()
             {
-                label_cn.abort();
+                //label_cn.abort();
                 label_cn.is_visible = false;
-                label_py.abort();
+                
+                //label_py.abort();
                 label_py.is_visible = false;
-                label_en.abort();
+                
+                //label_en.abort();
                 label_en.is_visible = false;
             }
         }
@@ -269,6 +297,7 @@ Page test_page
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 100, 50;//200, 100;
+                        is_visible = false;
                     }
 
 
@@ -289,6 +318,7 @@ Page test_page
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 100, 50;//200, 100;
+                        is_visible = false;
                     }
 
 
@@ -319,6 +349,7 @@ Page test_page
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 100, 50;//200, 100;
+                        is_visible = false;
                     }
 
 
@@ -338,6 +369,7 @@ Page test_page
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 100, 50;//200, 100;
+                        is_visible = false;
                     }
 
 
@@ -358,6 +390,16 @@ Page test_page
 
             // Return fixation offset time.
             return canvas.fixation.expected_finish_time;
+        }
+
+        //placeholder for buttons
+        void show_buttons()
+        {
+            //top
+            layout.buttons.topbuttons.button1.is_visible = true;
+            layout.buttons.topbuttons.button2.is_visible = true;
+            layout.buttons.botbuttons.button3.is_visible = true;
+            layout.buttons.botbuttons.button4.is_visible = true;  
         }
 
         // present warning
@@ -557,15 +599,25 @@ Page test_page
 
 
         //time labeloffset = layout.set_carrier_text(item, fixoffset);
-        time labeloffset = layout.labelcanvas.present_labels(
+        time labelonset = layout.labelcanvas.present_labels(
                                                     item.carrier_sent_cn, 
                                                     item.carrier_sent_pinyin,
                                                     item.carrier_sent_en, 
-                                                    fixoffset, LABEL_DURATION);
+                                                    fixoffset);
 
-        time primeoffset = layout.prime_audio(labeloffset);
+                // time labeloffset = layout.labelcanvas.present_labels(
+                //                                     item.carrier_sent_cn, 
+                //                                     item.carrier_sent_pinyin,
+                //                                     item.carrier_sent_en, 
+                //                                     fixoffset, LABEL_DURATION);
+
+        time wait_a_bit = labelonset + LABEL_DURATION;
+
+        time primeoffset = layout.prime_audio(wait_a_bit);
 
         time audio_end = stimulus.play(primeoffset);
+
+        layout.show_buttons();
         
         time whatever = layout.probe_response(audio_end, -1ms); 
 
@@ -575,6 +627,8 @@ Page test_page
         // Response interval starts at stimulus onset. Timeout after 
         // RESPONSE_DURATION unless this duration is 0s or less.
         response.start(audio_end, RESPONSE_DURATION);
+
+        layout.labelcanvas.hide_labels();
 
         // Update progress counter (if enabled).
         test_page_overlay.update_progress_bar(count);
