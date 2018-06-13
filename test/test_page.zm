@@ -140,7 +140,7 @@ Page test_page
             //                     string py,
             //                     string en,
             //                     time t,
-            //                     dur d = LABEL_DURATION)
+            //                     dur d = LABEL_WAI_TIME)
             // {
             //     label_cn.text      = cn;
             //     label_py.text      = py;
@@ -393,13 +393,29 @@ Page test_page
         }
 
         //placeholder for buttons
-        void show_buttons()
+
+        time show_buttons(time t)
         {
-            //top
-            layout.buttons.topbuttons.button1.is_visible = true;
-            layout.buttons.topbuttons.button2.is_visible = true;
-            layout.buttons.botbuttons.button3.is_visible = true;
-            layout.buttons.botbuttons.button4.is_visible = true;  
+            buttons.topbuttons.button1.is_visible = true;
+            buttons.topbuttons.button2.is_visible = true;
+            buttons.botbuttons.button3.is_visible = true;
+            buttons.botbuttons.button4.is_visible = true;  
+
+            // put it
+            buttons.topbuttons.button1.start(t);
+            buttons.topbuttons.button2.start(t);
+            buttons.botbuttons.button3.start(t);
+            buttons.botbuttons.button4.start(t);
+            //time back
+            return buttons.botbuttons.button4.expected_finish_time;
+        }
+
+        void hide_buttons()
+        {
+            buttons.topbuttons.button1.is_visible = false;
+            buttons.topbuttons.button2.is_visible = false;
+            buttons.botbuttons.button3.is_visible = false;
+            buttons.botbuttons.button4.is_visible = false;  
         }
 
         // present warning
@@ -590,7 +606,6 @@ Page test_page
         // Show this page (if not yet done) and make tref the trial start time.
         tref = test_window1.show_test_page(this, tref + INTERTRIAL_INTERVAL);
 
-
         // Reset response data.
         response.clear();
 
@@ -605,19 +620,13 @@ Page test_page
                                                     item.carrier_sent_en, 
                                                     fixoffset);
 
-                // time labeloffset = layout.labelcanvas.present_labels(
-                //                                     item.carrier_sent_cn, 
-                //                                     item.carrier_sent_pinyin,
-                //                                     item.carrier_sent_en, 
-                //                                     fixoffset, LABEL_DURATION);
-
-        time wait_a_bit = labelonset + LABEL_DURATION;
+        time wait_a_bit = labelonset + LABEL_WAIT_TIME;
 
         time primeoffset = layout.prime_audio(wait_a_bit);
 
         time audio_end = stimulus.play(primeoffset);
 
-        layout.show_buttons();
+        time bottons_visible = layout.show_buttons(audio_end);
         
         time whatever = layout.probe_response(audio_end, -1ms); 
 
@@ -629,6 +638,8 @@ Page test_page
         response.start(audio_end, RESPONSE_DURATION);
 
         layout.labelcanvas.hide_labels();
+        
+        layout.hide_buttons();
 
         // Update progress counter (if enabled).
         test_page_overlay.update_progress_bar(count);

@@ -3,18 +3,18 @@ id;emotion;stim_fname;carrier_sent_cn;carrier_sent_pinyin;carrier_sent_en;target
 2;NEUTRAL;n_t2_mong_c1_3.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong2;2
 3;NEUTRAL;n_t3_mong_c1_3.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong3;3
 4;NEUTRAL;n_t4_mong_c1_3.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; mong4;4
-5;NEUTRAL;n_t1_mong_c2_3.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong1;1
-6;NEUTRAL;n_t2_mong_c2_3.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong2;2
-7;NEUTRAL;n_t3_mong_c2_3.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong3;3
+5;NEUTRAL;n_t1_mong_c2_2.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong1;1
+6;NEUTRAL;n_t2_mong_c2_2.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong2;2
+7;NEUTRAL;n_t3_mong_c2_2.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong3;3
 8;NEUTRAL;n_t4_mong_c2_2.wav;我会读___这个字。;wo3 hui4 du2 ___ zhe4 ge4 zi4.;I can read the word ___ .;mong4;4
-9;NEUTRAL;n_t1_mong_c3_3.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong1;1
-10;NEUTRAL;n_t2_mong_c3_3.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong2;2
-11;NEUTRAL;n_t3_mong_c3_3.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong3;3
-12;NEUTRAL;n_t4_mong_c3_3.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong4;4
-13;NEUTRAL;n_t1_mong_c4_3.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong1;1
-14;NEUTRAL;n_t2_mong_c4_3.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong2;2
-15;NEUTRAL;n_t3_mong_c4_3.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong3;3
-16;NEUTRAL;n_t4_mong_c4_3.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong4;4
+9;NEUTRAL;n_t1_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong1;1
+10;NEUTRAL;n_t2_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong2;2
+11;NEUTRAL;n_t3_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong3;3
+12;NEUTRAL;n_t4_mong_c3_1.wav;我会写___这个字。;wo3 hui4 xie3 ___ zhe4 ge4 zi4.;I can write the word ___ .; mong4;4
+13;NEUTRAL;n_t1_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong1;1
+14;NEUTRAL;n_t2_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong2;2
+15;NEUTRAL;n_t3_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong3;3
+16;NEUTRAL;n_t4_mong_c4_1.wav;我想练___这个字。;wo3 xiang3 lian4 ___ zhe4 ge4 zi4.;I want to practice the word ___ .; mong4;4
 17;NEUTRAL;n_t1_ging_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging1;1
 18;NEUTRAL;n_t2_ging_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging2;2
 19;NEUTRAL;n_t3_ging_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ .; ging3;3

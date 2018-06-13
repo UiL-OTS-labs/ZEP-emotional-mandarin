@@ -22,12 +22,9 @@ const dur     INTERTRIAL_INTERVAL   = 0ms; //500ms; // depends on
 const dur     FIXATION_DURATION     = 500ms;
 
 // Label display period
-const dur     LABEL_DURATION        = 2000ms;
+const dur     LABEL_WAIT_TIME       = 2000ms;
 
 const dur     PRIME_SOUND_DURATION  = 300ms;
-
-// right before people may respond, this symbol should be flashed 
-const dur     BB_SYMBOL_DURATION    = 200ms;
 
 // Duration of the feedback presentation.
 const dur     FEEDBACK_DURATION     = 1000ms;
@@ -35,7 +32,7 @@ const dur     FEEDBACK_DURATION     = 1000ms;
 // Duration of the response interval. A value of 0ms means there is no
 // timeout.
 //const dur       RESPONSE_DURATION               = 2000ms;       // auto-paced
-const dur       RESPONSE_DURATION  = 0ms;          // self-paced
+const dur       RESPONSE_DURATION    = 0ms;          // self-paced
 
 const string    TOPL_BUTTON_TEXT = M"<b>Tone 1</b>\n<sub>(High level)</sub>";
 const string	TOPR_BUTTON_TEXT = M"<b>Tone 2</b>\n<sub>(Rising)</sub>";
