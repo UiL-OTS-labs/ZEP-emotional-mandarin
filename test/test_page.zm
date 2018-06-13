@@ -18,20 +18,8 @@ Page test_page
 
     init()
     {
-        fill_pattern_color = TEST_PAGE_COLOR;
+        fill_pattern_color = TEST_PAGE_STIMULUS_COLOR;
     }
-
-
-    //on_event:key_press()
-    //{
-    //    // Handle left-shift (no) and right-shift (yes).
-    //    if (input_key == KEY_Shift_L)
-    //        response.process_hit(0, event_time);
-    //    else if (input_key == KEY_Shift_R)
-    //        response.process_hit(1, event_time);
-    //    else
-    //        handle_special_key(this, input_key, input_modifiers);
-    //}
 
     // this might enable A NUMPAD RESPONSE
     on_event:key_press()
@@ -48,13 +36,6 @@ Page test_page
         else
             handle_special_key(this, input_key, input_modifiers);
     }
-
-    // 
-    //on_event:button_press()
-    //{
-    //    layout.canvas.check_mouse_click(input_pointer_x, input_pointer_y,
-    //        event_time);
-    //}
 
     on_event:message()
     {
@@ -75,7 +56,7 @@ Page test_page
 
             init()
             {
-                fill_pattern_color = TEST_PAGE_COLOR;
+                fill_pattern_color = TEST_PAGE_STIMULUS_COLOR;
                 size = 800, 200;//1080, 360;
                 offset_x = 0;//width / 2;
                 offset_y = 0;// height / 2;
@@ -96,8 +77,6 @@ Page test_page
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
 
                     hor_alignment       = ALIGN_BEGIN;
-                    is_visible          = false;
-                    //ver_alignment       = ALIGN_BEGIN;
                 }
             }
 
@@ -106,16 +85,13 @@ Page test_page
             {
                 on_event:init()
                 {
-                    //text = string(item.carrier_sent_pinyin);
                     x = 200;//360;
-                    y = 60;//180;
+                    y = 90;//180;
                     font_family         = "Arial Narrow";
                     font_size           = 18;//28;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_BEGIN;
-                    is_visible          = false;
-                    // ver_alignment       = ALIGN_CENTER;
                 }
             }
 
@@ -123,7 +99,6 @@ Page test_page
             {
                 on_event:init()
                 {
-                    //text = string(item.carrier_sent_en);
                     x = 200;//360;
                     y = 120;//300;
                     font_family         = "Arial Narrow";
@@ -131,60 +106,29 @@ Page test_page
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_BEGIN;
-                    is_visible          = false;
-                    // ver_alignment       = ALIGN_CENTER;
                 }
             }
-
-            // time present_labels(string cn,
-            //                     string py,
-            //                     string en,
-            //                     time t,
-            //                     dur d = LABEL_WAI_TIME)
-            // {
-            //     label_cn.text      = cn;
-            //     label_py.text      = py;
-            //     label_en.text      = en;
-            //     // put it
-            //     label_cn.start(t, d);
-            //     label_py.start(t, d);
-            //     label_en.start(t, d);
-            //     return label_en.expected_finish_time;
-            // }
 
             time present_labels(string cn,
                                 string py,
                                 string en,
-                                time t)
+                                time start,
+                                time stop )
             {
                 label_cn.text      = cn;
                 label_py.text      = py;
                 label_en.text      = en;
 
-                //make stuff visible
-                label_cn.is_visible = true;
-                label_py.is_visible = true;
-                label_en.is_visible = true;
-
                 // put it
-                label_cn.start(t);
-                label_py.start(t);
-                label_en.start(t);
+                label_cn.start(start);
+                label_py.start(start);
+                label_en.start(start);
+
+                label_cn.stop(stop);
+                label_py.stop(stop);
+                label_en.stop(stop);
 
                 return label_en.expected_start_time;
-            }
-
-
-            void hide_labels()
-            {
-                //label_cn.abort();
-                label_cn.is_visible = false;
-                
-                //label_py.abort();
-                label_py.is_visible = false;
-                
-                //label_en.abort();
-                label_en.is_visible = false;
             }
         }
 
@@ -244,21 +188,6 @@ Page test_page
                     y        = -height/2;
                 }
             }
-
-            // RectangleShape bboxim
-            // {
-            //     on_event:init()
-            //     {
-            //         corner_radius = 5;
-            //         width = 300;
-            //         height = 200;
-            //         x = -width / 2;
-            //         y = -height / 2;
-            //         line_pattern_color = color:black;
-            //         fill_pattern_color = color:green;
-            //         //is_visible = false;
-            //     }
-            // }
 
             void clear_bbox()
             {
@@ -393,7 +322,6 @@ Page test_page
         }
 
         //placeholder for buttons
-
         time show_buttons(time t)
         {
             buttons.topbuttons.button1.is_visible = true;
@@ -419,16 +347,16 @@ Page test_page
         }
 
         // present warning
-        time prime_audio(time t)
+        time prompt_audio(time t)
         {
-            canvas.soundprime.start(t, PRIME_SOUND_DURATION);
+            canvas.soundprime.start(t, PROMPT_SOUND_DURATION);
             return canvas.soundprime.expected_finish_time;
         }
 
-        // present probe
-        time probe_response(time t, dur d)
+        // present prompt
+        time prompt_response(time t)
         {
-            canvas.bboxim.start(t, d);//BB_SYMBOL_DURATION);
+            canvas.bboxim.start(t);//dur was BB_SYMBOL_DURATION);
             return canvas.bboxim.expected_start_time;
         }
   
@@ -568,7 +496,6 @@ Page test_page
         // Show or hide prompt.
         test_page_overlay.show_prompt(pr ? 
                                         "Of which tone is the ___ word?" : "");
-
         // Enable or disable the progress bar.
         test_page_overlay.show_progress_bar(ntrials);   // disabled if < 0
 
@@ -612,38 +539,32 @@ Page test_page
         // Start fixation symbol, for whatevcer the reason.
         time fixoffset = layout.start_fixation(tref);
 
+        time wait_a_bit = fixoffset + LABEL_WAIT_TIME;  
 
-        //time labeloffset = layout.set_carrier_text(item, fixoffset);
-        time labelonset = layout.labelcanvas.present_labels(
-                                                    item.carrier_sent_cn, 
-                                                    item.carrier_sent_pinyin,
-                                                    item.carrier_sent_en, 
-                                                    fixoffset);
+        time audio_prompt_offset = layout.prompt_audio(wait_a_bit);
 
-        time wait_a_bit = labelonset + LABEL_WAIT_TIME;
-
-        time primeoffset = layout.prime_audio(wait_a_bit);
-
-        time audio_end = stimulus.play(primeoffset);
+        time audio_end = stimulus.play(audio_prompt_offset);
 
         time bottons_visible = layout.show_buttons(audio_end);
-        
-        time whatever = layout.probe_response(audio_end, -1ms); 
+        //time labels_gone = layout.labelcanvas.hide_labels(audio_end);
+        time whatever = layout.prompt_response(audio_end); 
 
-        // Start the subselection (target) animation
-        //time targetonset = layout.start_target_check(subonset, target_dur);
+
+        time labelonset = layout.labelcanvas.present_labels(
+                                            item.carrier_sent_cn, 
+                                            item.carrier_sent_pinyin,
+                                            item.carrier_sent_en, 
+                                            fixoffset,
+                                            audio_end);
 
         // Response interval starts at stimulus onset. Timeout after 
         // RESPONSE_DURATION unless this duration is 0s or less.
         response.start(audio_end, RESPONSE_DURATION);
 
-        layout.labelcanvas.hide_labels();
-        
         layout.hide_buttons();
 
         // Update progress counter (if enabled).
         test_page_overlay.update_progress_bar(count);
-
 
         // Update status line on control window. Cleared in done() above.
         control.set_status(

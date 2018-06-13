@@ -22,9 +22,9 @@ const dur     INTERTRIAL_INTERVAL   = 0ms; //500ms; // depends on
 const dur     FIXATION_DURATION     = 500ms;
 
 // Label display period
-const dur     LABEL_WAIT_TIME       = 2000ms;
+const dur     LABEL_WAIT_TIME       = 2400ms;
 
-const dur     PRIME_SOUND_DURATION  = 300ms;
+const dur     PROMPT_SOUND_DURATION = 400ms;
 
 // Duration of the feedback presentation.
 const dur     FEEDBACK_DURATION     = 1000ms;

@@ -54,31 +54,31 @@ Block task
         {
 //            pause_page.set_text_size(1000, 600);
             pause_page.set_text(
-                "<b>Dear participant,</b>\n"
+                "<b>Instructions,</b>\n"
                 "\n"
-                "Thank you for participating in this experiment.\n"
+                "Thank you for taking part in this study.\n"
+                "\n" 
+                "In this experiment, you will hear a few Chinese sentences.\n"
                 "\n"
-                "TODO: Specifics (Yachan)\n"
-
-//                "To respond, hit the left shift key for <i>No</i> and the "
-//                "right shift key for <i>Yes</i>.\n"
-
-//                "To respond, hit the left button on the button-box for "
-//                "<i>No</i> and the right button for <i>Yes</i>. "
-//                "Alternatively you can use the left or right shift keys.\n"
-
+                "You may hear the same sentence in different emotions.\n"
+                "Your task is to listen carefully to the recordings. After\n"
+                "each sentence, you need to indicate the tone of the target \n"
+                "word (i.e. the bit underscored) by pressing one of four \n"
+                "options on the button box.\n"
+                "\n"
+                "Please use the headphone to listen to the recordings.\n"
+                "\n"
+                "You will listen to each trial only one time.\n" 
                 "\n"
                 "First we will do a short practice.\n"
                 "\n"
-//                "<i>Hit Enter when ready to start.</i>", 
-                "<i>Hit any button on the button-box when ready to start.</i>", 
+                "<i>Hit any button on the button-box when ready to start.</i>\n", 
                 true);
 
             pause_page.action(this);
             control.button_box.enable_all_buttons(CONTINUE);
         }
     }
-
 
     Block practice
     {
@@ -131,7 +131,6 @@ Block task
                 "If you have any questions at this moment please ask the "
                 "experimenter now.\n"
                 "\n"
-//                "<i>Hit Enter when ready to proceed.</i>", 
                 "<i>Hit any button on the button-box when ready to "
                 "proceed.</i>", 
                 true);
