@@ -22,7 +22,7 @@ is implemented.
 
 # Conditions
 
-Conditions mixed "latin squared" are variations of this matrix:
+Conditions are mixed "latin squared" variations of this matrix:
 
 **Condition               |   I         |    II       |   III       |   IV  
 --------------------------|-------------|-------------|-------------|-----------
