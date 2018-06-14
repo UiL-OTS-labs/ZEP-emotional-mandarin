@@ -48,7 +48,7 @@ Page test_page
         init()
         {
             spacing = 10; //50;
-            height = 0;     // 0 means as large as possible
+            height = 0;  
         }
 
         CanvasGadget labelcanvas
@@ -57,7 +57,7 @@ Page test_page
             init()
             {
                 fill_pattern_color = TEST_PAGE_STIMULUS_COLOR;
-                size = 800, 200;//1080, 360;
+                size = 800, 200;
                 offset_x = width / 2;
                 offset_y = height / 2;
             }
@@ -68,11 +68,11 @@ Page test_page
                 on_event:init()
                 {
                     //text = string(item.carrier_sent_cn);
-                    x = 0;//360;
-                    y = -labelcanvas.height/3; //20;//40;
+                    x = 0;
+                    y = -labelcanvas.height/3;
 
                     font_family         = "Arial Narrow";
-                    font_size           = 30;//50;
+                    font_size           = 30;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     ver_alignment       = ALIGN_CENTER;
@@ -86,9 +86,9 @@ Page test_page
                 on_event:init()
                 {
                     x = 0;//360;
-                    y = 0;//-labelcanvas.height/3; //90;//180;
+                    y = 0;
                     font_family         = "Arial Narrow";
-                    font_size           = 18;//28;
+                    font_size           = 18;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_CENTER;
@@ -102,15 +102,34 @@ Page test_page
                 on_event:init()
                 {
                     x = 0;//360;
-                    y = labelcanvas.height/3;//120;//300;
+                    y = labelcanvas.height/3;
                     font_family         = "Arial Narrow";
-                    font_size           = 18;//28;
+                    font_size           = 18;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_CENTER;
                     ver_alignment       = ALIGN_CENTER;
                 }
             }
+
+
+            TextShape syllable
+            {
+
+                on_event:init()
+                {
+                    x                   = 0;
+                    y                   = labelcanvas.height/3;
+                    font_family         = "Arial Narrow";
+                    font_size           = 24;
+                    font_weight         = FONT_WEIGHT_BOLD;
+                    line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
+                    hor_alignment       = ALIGN_CENTER;
+                    ver_alignment       = ALIGN_CENTER;
+                }
+            }
+
+
 
             time present_labels(string cn,
                                 string py,
@@ -133,6 +152,22 @@ Page test_page
 
                 return label_en.expected_start_time;
             }
+
+
+            time present_syllable(string syl, time start)
+            {
+                syllable.text          = syl;
+                syllable.start(start);
+                return syllable.expected_start_time;
+            } 
+
+
+            void clear_syllable()
+            {
+                syllable.abort();
+                syllable.text = "";
+                syllable.is_visible = false;
+            }           
         }
 
         //spacer?
@@ -206,7 +241,7 @@ Page test_page
 
             init()
             {
-                spacing = 50;//50;
+                spacing = 50;
                 options = LAYOUT_EQUAL_HEIGHT;
             }
 
@@ -214,7 +249,7 @@ Page test_page
             {
                 init()
                 {
-                    spacing = 50;//50;
+                    spacing = 50;
                     options = LAYOUT_EQUAL_WIDTH;
                 }
 
@@ -223,12 +258,12 @@ Page test_page
                 {
                     init()
                     {
-                        text = TOPL_BUTTON_TEXT, true;
-                        font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 15;//20; 
-                        fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
-                        text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 140, 80;//200, 100;
+                        text                = TOPL_BUTTON_TEXT, true;
+                        font_family         = TEST_PAGE_BUTTON_FONT_FAMILY;
+                        font_size           = 15;
+                        fill_pattern_color  = TEST_PAGE_BUTTON_COLOR;
+                        text_color          = TEST_PAGE_BUTTON_TEXT_COLOR;
+                        size = 140, 80;
                         is_visible = false;
                     }
 
@@ -244,13 +279,13 @@ Page test_page
                 {
                     init()
                     {
-                        text = TOPR_BUTTON_TEXT, true;
-                        font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 15;//20 ;
-                        fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
-                        text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 140, 80;//200, 100;
-                        is_visible = false;
+                        text                = TOPR_BUTTON_TEXT, true;
+                        font_family         = TEST_PAGE_BUTTON_FONT_FAMILY;
+                        font_size           = 15;
+                        fill_pattern_color  = TEST_PAGE_BUTTON_COLOR;
+                        text_color          = TEST_PAGE_BUTTON_TEXT_COLOR;
+                        size                = 140, 80;
+                        is_visible          = false;
                     }
 
 
@@ -262,14 +297,13 @@ Page test_page
         
             }
 
-            //
 
             HorizontalLayout botbuttons
             {
 
                 init()
                 {
-                    spacing = 50;//50;
+                    spacing = 50;
                     options = LAYOUT_EQUAL_WIDTH;
                 }
 
@@ -277,13 +311,13 @@ Page test_page
                 {
                     init()
                     {
-                        text = BOTL_BUTTON_TEXT, true;
-                        font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 15;//20; 
-                        fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
-                        text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 140, 80;//200, 100;
-                        is_visible = false;
+                        text                = BOTL_BUTTON_TEXT, true;
+                        font_family         = TEST_PAGE_BUTTON_FONT_FAMILY;
+                        font_size           = 15;
+                        fill_pattern_color  = TEST_PAGE_BUTTON_COLOR;
+                        text_color          = TEST_PAGE_BUTTON_TEXT_COLOR;
+                        size                = 140, 80;
+                        is_visible          = false;
                     }
 
 
@@ -297,13 +331,13 @@ Page test_page
                 {
                     init()
                     {
-                        text = BOTR_BUTTON_TEXT, true;
-                        font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 15;//20; 
-                        fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
-                        text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 140, 80;//200, 100;
-                        is_visible = false;
+                        text                = BOTR_BUTTON_TEXT, true;
+                        font_family         = TEST_PAGE_BUTTON_FONT_FAMILY;
+                        font_size           = 15; 
+                        fill_pattern_color  = TEST_PAGE_BUTTON_COLOR;
+                        text_color          = TEST_PAGE_BUTTON_TEXT_COLOR;
+                        size                = 140, 80;
+                        is_visible          = false;
                     }
 
 
@@ -361,7 +395,7 @@ Page test_page
         // present prompt
         time prompt_response(time t)
         {
-            canvas.bboxim.start(t);//dur was BB_SYMBOL_DURATION);
+            canvas.bboxim.start(t);
             return canvas.bboxim.expected_start_time;
         }
   
@@ -369,6 +403,8 @@ Page test_page
         void reset()
         {
             full_abort();
+            canvas.clear_bbox();
+            labelcanvas.clear_syllable();
         }
     }
 
@@ -377,7 +413,6 @@ Page test_page
     {
         // Sound source/producer object.
         SoundFile clip {}
-
 
         // Sound sink/consumer object.
         SoundPlayback playback {}
@@ -392,7 +427,7 @@ Page test_page
 
             start(t);
 
-            return expected_finish_time; //+ dur item.target_offset; 
+            return expected_finish_time;
         }
     }
 
@@ -404,14 +439,12 @@ Page test_page
         int     rt;             // response time [ms]
         int     correct;        // correct response: 0=no, 1=yes, -1=n.a.
         int     tone_chosen;
-        //real    correctness;
 
         void clear()
         {
             value = -1;
             rt = -9999;
             correct = -1;
-            // chosen_alt = "";
         }
 
 
@@ -439,10 +472,10 @@ Page test_page
                 else
                     print_error(" ERRRROR! Nothing chosen.");
 
-                println ("Chosen button value = " + tone_chosen);
-                println ("Chosen button index = " + val );
-                println ("Correct item_button = " + item.correct_tone);
-                println ("was is correct? ..." + correct);
+                // println ("Chosen button value = " + tone_chosen);
+                // println ("Chosen button index = " + val );
+                // println ("Correct item_button = " + item.correct_tone);
+                // println ("was is correct? ..." + correct);
 
                 ignore_remaining_hits();
 
@@ -486,10 +519,8 @@ Page test_page
         target = null;
 
         control.clear_status();
-            
-        layout.canvas.clear_bbox();
-    }
 
+    }
 
     //==========================================================================
 
@@ -535,7 +566,6 @@ Page test_page
         // Save the passed trial control parameters.
         item = it;
 
-
         // Show this page (if not yet done) and make tref the trial start time.
         tref = test_window1.show_test_page(this, tref + INTERTRIAL_INTERVAL);
 
@@ -563,6 +593,10 @@ Page test_page
                                             item.carrier_sent_en, 
                                             fixoffset,
                                             audio_end);
+
+        time sylonset  = layout.labelcanvas.present_syllable(
+                                                    item.target_syllable,
+                                                    audio_end);
 
         // Response interval starts at stimulus onset. Timeout after 
         // RESPONSE_DURATION unless this duration is 0s or less.

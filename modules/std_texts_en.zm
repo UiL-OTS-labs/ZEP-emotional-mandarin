@@ -19,10 +19,6 @@ HISTORY:
 const string    CONTINUE_BUTTON_TEXT  = "Continue";
 const string    NEXT_BUTTON_TEXT      = "Next";
 const string    REPEAT_BUTTON_TEXT    = "Repeat";
-// const string    TOPL_BUTTON_TEXT      = "Top Left";
-// const string    TOPR_BUTTON_TEXT      = "Top Right";
-// const string    BOTL_BUTTON_TEXT      = "Bottom Left";
-// const string    BOTR_BUTTON_TEXT      = "Bottom Right";
 const string    NO_BUTTON_TEXT        = "No";
 const string    TRUE_BUTTON_TEXT      = "True";
 const string    FALSE_BUTTON_TEXT     = "False";
