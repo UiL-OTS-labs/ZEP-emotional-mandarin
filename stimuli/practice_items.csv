@@ -1,5 +1,3 @@
 id;emotion;stim_fname;carrier_sent_cn;carrier_sent_pinyin;carrier_sent_en;target_word_pinyin;correct_tone;target_syllable
-1;SAD;s_t1_mong_c1_2.wav;指出__mong__这个字。;zhi3 chu1 __mong__ zhe4 ge4 zi4.;Wijs het woord __mong__ aan . ;mong1;1;mong
-2;SAD;s_t2_mong_c1_2.wav;指出__mong__这个字。;zhi3 chu1 __mong__ zhe4 ge4 zi4.;Wijs het woord __mong__ aan . ;mong2;2;mong
-3;SAD;s_t3_mong_c1_2.wav;指出__mong__这个字。;zhi3 chu1 __mong__ zhe4 ge4 zi4.;Wijs het woord __mong__ aan . ;mong3;3;mong
-4;SAD;s_t4_mong_c1_2.wav;指出__mong__这个字。;zhi3 chu1 __mong__ zhe4 ge4 zi4.;Wijs het woord __mong__ aan . ;mong4;4;mong
+50;NEUTRAL;n_t2_bv_c1_1.wav;指出_bü_这个字。;zhi3 chu1 _bü_ zhe4 ge4 zi4.;Point out the word _bü_ .;bü2;2;bü
+31;NEUTRAL;n_t3_ging_c4_1.wav;我想练_ging_这个字。;wo3 xiang3 lian4 _ging_ zhe4 ge4 zi4.;I want to practice the word _ging_ .;ging3;3;ging

@@ -49,26 +49,20 @@ Block task
         on_event:entry()
         {
             pause_page.set_text(
-                "<b>Instructions,</b>\n"
+                "                   <b>Instructions</b>\n"
                 "\n"
                 "Thank you for taking part in this study.\n"
                 "\n" 
                 "In this experiment, you will hear a few Chinese sentences.\n"
                 "\n"
-                "You may hear the same sentence in different emotions.\n"
-                "Your task is to listen carefully to the recordings. After\n"
-                "each sentence, you need to indicate the tone of the target \n"
-                "word (i.e. the bit underscored) by pressing one of four \n"
-                "options on the button box.\n"
+                "You may hear the same sentence in different emotions. Your task is to listen carefully to the recordings. After each sentence, you need to indicate the tone of the target word (i.e. the bit underscored) by pressing one of four options on the button box.\n"
                 "\n"
-                "Please use the headphone to listen to the recordings.\n"
-                "\n"
-                "You will listen to each trial only one time.\n" 
+                "Please use the headphone to listen to the recordings. You will listen to each trial only one time.\n" 
                 "\n"
                 "First we will do a short practice.\n"
                 "\n"
-                "<i>Hit any button on the button-box when ready to start.</i>\n", 
-                true);
+                "<i>Hit any button on the button-box when ready to start.</i>\n"
+                , true);
 
             pause_page.action(this);
             control.button_box.enable_all_buttons(CONTINUE);

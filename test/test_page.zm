@@ -121,7 +121,7 @@ Page test_page
                     x                   = 0;
                     y                   = labelcanvas.height/3;
                     font_family         = "Arial Narrow";
-                    font_size           = 24;
+                    font_size           = 36;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
                     hor_alignment       = ALIGN_CENTER;
