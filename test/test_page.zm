@@ -206,7 +206,7 @@ Page test_page
 
             init()
             {
-                spacing = 10;//50;
+                spacing = 50;//50;
                 options = LAYOUT_EQUAL_HEIGHT;
             }
 
@@ -214,7 +214,7 @@ Page test_page
             {
                 init()
                 {
-                    spacing = 10;//50;
+                    spacing = 50;//50;
                     options = LAYOUT_EQUAL_WIDTH;
                 }
 
@@ -225,10 +225,10 @@ Page test_page
                     {
                         text = TOPL_BUTTON_TEXT, true;
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 10;//20; 
+                        font_size = 15;//20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 100, 50;//200, 100;
+                        size = 140, 80;//200, 100;
                         is_visible = false;
                     }
 
@@ -246,10 +246,10 @@ Page test_page
                     {
                         text = TOPR_BUTTON_TEXT, true;
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 10;//20 ;
+                        font_size = 15;//20 ;
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 100, 50;//200, 100;
+                        size = 140, 80;//200, 100;
                         is_visible = false;
                     }
 
@@ -262,12 +262,14 @@ Page test_page
         
             }
 
+            //
+
             HorizontalLayout botbuttons
             {
 
                 init()
                 {
-                    spacing = 10;//50;
+                    spacing = 50;//50;
                     options = LAYOUT_EQUAL_WIDTH;
                 }
 
@@ -277,10 +279,10 @@ Page test_page
                     {
                         text = BOTL_BUTTON_TEXT, true;
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 10;//20; 
+                        font_size = 15;//20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 100, 50;//200, 100;
+                        size = 140, 80;//200, 100;
                         is_visible = false;
                     }
 
@@ -297,10 +299,10 @@ Page test_page
                     {
                         text = BOTR_BUTTON_TEXT, true;
                         font_family = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size = 10;//20; 
+                        font_size = 15;//20; 
                         fill_pattern_color = TEST_PAGE_BUTTON_COLOR;
                         text_color = TEST_PAGE_BUTTON_TEXT_COLOR;
-                        size = 100, 50;//200, 100;
+                        size = 140, 80;//200, 100;
                         is_visible = false;
                     }
 
