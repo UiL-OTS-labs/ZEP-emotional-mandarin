@@ -260,7 +260,7 @@ Page test_page
                     {
                         text                = TOPL_BUTTON_TEXT, true;
                         font_family         = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size           = 15;
+                        font_size           = 17;
                         fill_pattern_color  = TEST_PAGE_BUTTON_COLOR;
                         text_color          = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size = 140, 80;
@@ -281,7 +281,7 @@ Page test_page
                     {
                         text                = TOPR_BUTTON_TEXT, true;
                         font_family         = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size           = 15;
+                        font_size           = 17;
                         fill_pattern_color  = TEST_PAGE_BUTTON_COLOR;
                         text_color          = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size                = 140, 80;
@@ -313,7 +313,7 @@ Page test_page
                     {
                         text                = BOTL_BUTTON_TEXT, true;
                         font_family         = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size           = 15;
+                        font_size           = 17;
                         fill_pattern_color  = TEST_PAGE_BUTTON_COLOR;
                         text_color          = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size                = 140, 80;
@@ -333,7 +333,7 @@ Page test_page
                     {
                         text                = BOTR_BUTTON_TEXT, true;
                         font_family         = TEST_PAGE_BUTTON_FONT_FAMILY;
-                        font_size           = 15; 
+                        font_size           = 17; 
                         fill_pattern_color  = TEST_PAGE_BUTTON_COLOR;
                         text_color          = TEST_PAGE_BUTTON_TEXT_COLOR;
                         size                = 140, 80;
@@ -531,8 +531,7 @@ Page test_page
         test_page_overlay.setup(this);
 
         // Show or hide prompt.
-        test_page_overlay.show_prompt(pr ? 
-                                        "Of which tone is the ___ word?" : "");
+        
         // Enable or disable the progress bar.
         test_page_overlay.show_progress_bar(ntrials);   // disabled if < 0
 
