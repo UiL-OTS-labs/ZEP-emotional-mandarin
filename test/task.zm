@@ -40,11 +40,7 @@ Block task
     on_event:entry()
     {
 
-        //experiment.setup_response_box();
         control.button_box.open();
-
-        // If necessary set parallel port line D0 to power button box device.
-//        control.button_box.output(0x02);
     }
 
 
@@ -52,7 +48,6 @@ Block task
     {
         on_event:entry()
         {
-//            pause_page.set_text_size(1000, 600);
             pause_page.set_text(
                 "<b>Instructions,</b>\n"
                 "\n"
@@ -89,7 +84,6 @@ Block task
         {
             num_cycles = practice_items.size;
 
-            // Prepare test page: progress bar, feedback and prompt enabled.
             test_page.setup(num_cycles, true, true);
         }
 
@@ -151,7 +145,6 @@ Block task
             if (shuffle_test_items() != OK) terminate;
 
             num_cycles = test_items[selected_group].size;
-            //num_cycles = 3;
 
             // Prepare test page: progress bar enabled, feedback and prompt 
             // disabled.
@@ -172,7 +165,7 @@ Block task
         {
             on_event:entry()
             {
-                //item = test_items[selected_group][test.cycle];
+
                 item = test_items[selected_group][test.cycle];
 
                 test_page.action(this, item, reference_time, test.cycle);
@@ -203,9 +196,6 @@ Block task
                
                 output.value                = test_page.response.value;
                 
-
-                //output.correct_tone         = test_page.item.correct_tone;
-                
                 test_output_append(output);
             }
         }
@@ -224,7 +214,6 @@ Block task
 
 void action(Part caller)
 {
-    // Activate the task. When the task is done, the registered caller
-    // (c.q. the main experiment object) will automatically be signalled.
+    // Activate the task. 
     task.enter(caller);
 }
