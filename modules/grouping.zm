@@ -17,8 +17,10 @@ HISTORY:
 // Symbolic definition of groups.
 enum TestGroup
 {
+    LIST0,
     LIST1,
-    LIST2
+    LIST2,
+    LIST3
 }
 
 

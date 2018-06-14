@@ -31,36 +31,13 @@ record TestOutput
     string      target_word_pinyin;
 
     int         correct_tone;       // which was the correct tone
-        
-    int         value;              // response value: 0=no, 1=yes, -1=timeout
-    int         rt;                 // response time [ms]
-    int         correct;            // correct response: 0=no, 1=yes, -1=n.a.
-
     int         tone_chosen;
-    bool        answer_correct;
+    int         answer_correct;     // correct response: 0=no, 1=yes, -1=n.a.
+    int         rt;                 // response time [ms]
+    
+    int         value;              // response value: 0=no, 1=yes, -1=timeout
+
 }
-
-              // TestOutput output;
-
-              //   output.trialnum             = test.cycle + 1;
-              //   output.id                   = item.id;
-              //   output.emotion              = item.emotion;
-
-              //   output.stim_fname           = item.stim_fname;
-
-              //   output.carrier_sent_cn      = item.carrier_sent_cn;
-              //   output.carrier_sent_pinyin  = item.carrier_sent_pinyin;
-              //   output.carrier_sent_en      = item.carrier_sent_en;
-                
-              //   output.target_word_pinyin   = item.target_word_pinyin;
-              //   output.correct_tone         = item.correct_tone;
-
-              //   output.value                = test_page.response.value;
-              //   output.rt                   = test_page.response.rt;
-              //   output.correct              = test_page.response.correct;
-                
-              //   output.tone_chosen          = test_page.response.tone_chosen;
-
 
 // Test output table.
 TestOutput[..] test_output;
@@ -75,7 +52,6 @@ void test_output_append(TestOutput data)
     test_output.size = test_output.size + 1;
     test_output[test_output.size-1] = data;
 }
-
 
 // Writes test output table contents to CSV file and clears the table.
 void test_output_save()

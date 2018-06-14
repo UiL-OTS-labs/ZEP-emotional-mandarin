@@ -17,7 +17,116 @@ HISTORY:
 // Shuffles test_items table (no restrictions on item order).
 int shuffle_test_items()
 {
-    test_items.shuffle(0, -1);
+    test_items[selected_group].shuffle(0, -1);
 
     return OK;
 }
+
+
+// constraints
+// import stimuli;
+
+// const int SHUFFLE_MAX_ATTEMPTS = 100; // max number of shuffles before failing
+// //const int MAX_SUBSEQUENT_CONCRUENT = 4;
+// const int MAX_CONSECUTIVE_EMO  = 2;
+// const int MAX_CONSECUTIVE_TONE = 2;
+// const int MAX_CONSECUTIVE_WORD = 2;
+
+
+// // swaps two test items
+// void swap_test_item(TestItem[] items, int i, int j)
+// {
+//     TestItem temp = items[i];
+//     items[i] = items[j];
+//     items[j] = temp;
+// }
+
+// // Shuffles test_items table with constraints
+// int shuffle_items_array(TestItem[] items, int max_tries=SHUFFLE_MAX_ATTEMPTS)
+// {
+//     int nattempts   = 0;
+//     bool again      = true;
+
+//     while (again && nattempts < max_tries)
+//     {
+//         items.shuffle(0, -1);
+//         int violation = check_rule_compliance(items, 4);
+//         while (violation >= 0 && violation < items.size) {
+//             int swapable = -1;
+//             int i = violation + 1;
+//             FlankerType f = items[violation].flankers;
+//             while (i < items.size && swapable < 0) {
+//                 if (items[i].flankers != f)
+//                     swapable = i;
+//                 i++;
+//             }
+
+//             if (swapable >= 0) {
+//                 swap_test_item(items, violation, swapable);
+//             }
+//             else
+//                 break;
+
+//             violation = check_rule_compliance(items);
+//         }
+
+//         again = violation >= 0;
+//         nattempts++;
+//     }
+ 
+//     if (again)
+//         println("Unable to shuffle test_items according to criteria."
+//                 "Check table and/or criteria."
+//                 );
+ 
+//     return again ? ERROR : OK;
+// }
+
+// // Shuffles the items of all TestItem tables. 
+// int shuffle_items()
+// {
+//     int result = OK;
+//     prac_items.shuffle(0, -1);
+//     test_items_neutral.shuffle(0, -1);
+
+//     result = shuffle_items_array(test_items_ci);
+//     if (result != OK)
+//         return result;
+//     return result;
+// }
+
+
+// // Returns true when it finds nback items with the same congruency
+// // in a row.
+// bool congruence_violation(TestItem[] items, int n, int nback) {
+//     int i = n - 1;
+//     FlankerType flanker = items[n].flankers;
+//     bool found_deviant = false;
+
+//     // Check whether we have at least nback items in a row.
+//     if (n - (nback -1) < 0)
+//         return false;
+
+//     // Check whether we can find a deviant.
+//     while (i > n - nback && !found_deviant) {
+//         if (items[i].flankers != flanker)
+//             found_deviant = true;
+//         i--;
+//     }
+//     return !found_deviant;
+// }
+
+// // Checks whether the test items pseudo randomization is alright.
+// // Returns a number >= 0 if it finds a violating item. It
+// // returns -1 if no violations are found
+// int check_rule_compliance(TestItem[] items, int nback=4)
+// {
+//     int i=0;
+//     int violation = -1;
+//     while (i < items.size && violation < 0) {
+//         if (congruence_violation(items, i, nback))
+//             violation = i;
+//         i++;
+//     }
+//     return violation;
+// }

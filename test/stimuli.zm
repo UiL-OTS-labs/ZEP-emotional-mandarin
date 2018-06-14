@@ -15,7 +15,8 @@ enum ItemType
 // Item table record.
 record TestItem {
 
-    int         id;                
+    int         id;   
+
     ItemType    emotion;        
     
     string      stim_fname;
@@ -27,12 +28,16 @@ record TestItem {
     string      target_word_pinyin;
 
     int         correct_tone;
+    string      target_syllable;
+
 }
 
 
 // Item table record.
 record PracticeItem {
+
     int         id;                
+    
     ItemType    emotion;        
     
     string      stim_fname;
@@ -44,12 +49,13 @@ record PracticeItem {
     string      target_word_pinyin;
        
     int         correct_tone;
+    string      target_syllable;
 }
 
 
 // arrays for practice and test
-TestItem[..] practice_items;
-TestItem[..]     test_items;
+TestItem[..]         practice_items;
+TestItem[..][..]     test_items;
 
 
 int load_stimuli()

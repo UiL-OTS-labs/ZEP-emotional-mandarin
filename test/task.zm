@@ -150,7 +150,7 @@ Block task
             // Randomize test items table.
             if (shuffle_test_items() != OK) terminate;
 
-            num_cycles = test_items.size;
+            num_cycles = test_items[selected_group].size;
             //num_cycles = 3;
 
             // Prepare test page: progress bar enabled, feedback and prompt 
@@ -173,7 +173,7 @@ Block task
             on_event:entry()
             {
                 //item = test_items[selected_group][test.cycle];
-                item = test_items[test.cycle];
+                item = test_items[selected_group][test.cycle];
 
                 test_page.action(this, item, reference_time, test.cycle);
             }
@@ -196,12 +196,14 @@ Block task
                 
                 output.target_word_pinyin   = item.target_word_pinyin;
                 output.correct_tone         = item.correct_tone;
+                output.tone_chosen          = test_page.response.tone_chosen; 
+                output.answer_correct       = test_page.response.correct;
 
-                output.value                = test_page.response.value;
                 output.rt                   = test_page.response.rt;
-                output.correct              = test_page.response.correct;
+               
+                output.value                = test_page.response.value;
                 
-                output.tone_chosen          = test_page.response.tone_chosen;
+
                 //output.correct_tone         = test_page.item.correct_tone;
                 
                 test_output_append(output);

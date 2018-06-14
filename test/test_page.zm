@@ -58,8 +58,8 @@ Page test_page
             {
                 fill_pattern_color = TEST_PAGE_STIMULUS_COLOR;
                 size = 800, 200;//1080, 360;
-                offset_x = 0;//width / 2;
-                offset_y = 0;// height / 2;
+                offset_x = width / 2;
+                offset_y = height / 2;
             }
 
 
@@ -68,15 +68,15 @@ Page test_page
                 on_event:init()
                 {
                     //text = string(item.carrier_sent_cn);
-                    x = 200;//360;
-                    y = 20;//40;
+                    x = 0;//360;
+                    y = -labelcanvas.height/3; //20;//40;
 
                     font_family         = "Arial Narrow";
                     font_size           = 30;//50;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
-
-                    hor_alignment       = ALIGN_BEGIN;
+                    ver_alignment       = ALIGN_CENTER;
+                    hor_alignment       = ALIGN_CENTER;
                 }
             }
 
@@ -85,13 +85,15 @@ Page test_page
             {
                 on_event:init()
                 {
-                    x = 200;//360;
-                    y = 90;//180;
+                    x = 0;//360;
+                    y = 0;//-labelcanvas.height/3; //90;//180;
                     font_family         = "Arial Narrow";
                     font_size           = 18;//28;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
-                    hor_alignment       = ALIGN_BEGIN;
+                    hor_alignment       = ALIGN_CENTER;
+                    ver_alignment       = ALIGN_CENTER;
+
                 }
             }
 
@@ -99,13 +101,14 @@ Page test_page
             {
                 on_event:init()
                 {
-                    x = 200;//360;
-                    y = 120;//300;
+                    x = 0;//360;
+                    y = labelcanvas.height/3;//120;//300;
                     font_family         = "Arial Narrow";
                     font_size           = 18;//28;
                     font_weight         = FONT_WEIGHT_BOLD;
                     line_pattern_color  = TEST_PAGE_STIMULUS_TEXT_COLOR;
-                    hor_alignment       = ALIGN_BEGIN;
+                    hor_alignment       = ALIGN_CENTER;
+                    ver_alignment       = ALIGN_CENTER;
                 }
             }
 
@@ -399,6 +402,7 @@ Page test_page
         int     rt;             // response time [ms]
         int     correct;        // correct response: 0=no, 1=yes, -1=n.a.
         int     tone_chosen;
+        //real    correctness;
 
         void clear()
         {
@@ -422,7 +426,7 @@ Page test_page
 
                 correct = (val + 1 == item.correct_tone);
                 
-                if ( val == 0)
+                if (val == 0)
                     tone_chosen = 1;
                 else if (val == 1)
                     tone_chosen = 2;
@@ -442,11 +446,11 @@ Page test_page
 
                 stop();
             }
-            else if (validity == HIT_TOO_EARLY || validity == HIT_TOO_LATE)
-            {
-                // False alarm. Deal with this if desired.
-                //TODO: ask Yachan!
-            }
+            // else if (validity == HIT_TOO_EARLY || validity == HIT_TOO_LATE)
+            // {
+            //     // False alarm. Deal with this if desired.
+            //     //TODO: ask Yachan!
+            // }
         }
 
 
@@ -545,7 +549,8 @@ Page test_page
 
         time audio_end = stimulus.play(audio_prompt_offset);
 
-        time bottons_visible = layout.show_buttons(audio_end);
+        time buttons_visible = layout.show_buttons(audio_end);
+
         //time labels_gone = layout.labelcanvas.hide_labels(audio_end);
         time whatever = layout.prompt_response(audio_end); 
 

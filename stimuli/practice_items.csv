@@ -1,5 +1,5 @@
-id;emotion;stim_fname;carrier_sent_cn;carrier_sent_pinyin;carrier_sent_en;target_word_pinyin;correct_tone
-1;SAD;s_t1_mong_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ . ;mong1;1
-2;SAD;s_t2_mong_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ . ;mong2;2
-3;SAD;s_t3_mong_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ . ;mong3;3
-4;SAD;s_t4_mong_c1_2.wav;指出___这个字。;zhi3 chu1 ___ zhe4 ge4 zi4.;Point out the word ___ . ;mong4;4
+id;emotion;stim_fname;carrier_sent_cn;carrier_sent_pinyin;carrier_sent_en;target_word_pinyin;correct_tone;target_syllable
+1;SAD;s_t1_mong_c1_2.wav;指出__mong__这个字。;zhi3 chu1 __mong__ zhe4 ge4 zi4.;Wijs het woord __mong__ aan . ;mong1;1;mong
+2;SAD;s_t2_mong_c1_2.wav;指出__mong__这个字。;zhi3 chu1 __mong__ zhe4 ge4 zi4.;Wijs het woord __mong__ aan . ;mong2;2;mong
+3;SAD;s_t3_mong_c1_2.wav;指出__mong__这个字。;zhi3 chu1 __mong__ zhe4 ge4 zi4.;Wijs het woord __mong__ aan . ;mong3;3;mong
+4;SAD;s_t4_mong_c1_2.wav;指出__mong__这个字。;zhi3 chu1 __mong__ zhe4 ge4 zi4.;Wijs het woord __mong__ aan . ;mong4;4;mong
